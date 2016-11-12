@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "668523215875",
+    "firebase_url": "https://blog-fcada.firebaseio.com",
+    "project_id": "blog-fcada",
+    "storage_bucket": "blog-fcada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668523215875:android:f2b81dcc986f00a8",
+        "android_client_info": {
+          "package_name": "com.example.garorasu.welcome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668523215875-jeikdk0netp3ar6lpb0p2ic3r5590p7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.garorasu.welcome",
+            "certificate_hash": "62D078F384055BDE87CEA442A13DA0D695E92F5B"
+          }
+        },
+        {
+          "client_id": "668523215875-b8b2hgpdqhu5779aj837mm0ith3nugp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBou_MS25E8rYwumqS-y125gHJdByt2dvY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668523215875-b8b2hgpdqhu5779aj837mm0ith3nugp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
