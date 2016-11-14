@@ -6,21 +6,33 @@ import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 
+import java.util.Date;
+
 public class NavigationScreen extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "NavigationScreen";
     private ResideMenu resideMenu;
     private NavigationScreen mContext;
     private ResideMenuItem itemFeed;
     private ResideMenuItem itemStudy;
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef,upref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +50,29 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         });
         mContext = this;
         setUpMenu();
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("blog");
+        //upref = myRef.child("blog");
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                for(DataSnapshot ds:dataSnapshot.getChildren()) {
+                    Post post = ds.getValue(Post.class);
+                    System.out.println("Post data fetched from firebase is : " + post.getHeader());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        myRef.addListenerForSingleValueEvent(postListener);
+
     }
     @Override
     public void onClick(View view) {
@@ -93,7 +128,6 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             itemVideos = new ResideMenuItem(this, icon[3], titles[3]);
             itemVideos.setOnClickListener(this);
             resideMenu.addMenuItem(itemVideos,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
-
     }
 }
 
