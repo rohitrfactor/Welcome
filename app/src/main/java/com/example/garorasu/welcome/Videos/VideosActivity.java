@@ -1,4 +1,4 @@
-package com.example.garorasu.welcome;
+package com.example.garorasu.welcome.Videos;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.garorasu.welcome.NavigationScreen;
+import com.example.garorasu.welcome.Quiz.QuizActivity;
+import com.example.garorasu.welcome.R;
+import com.example.garorasu.welcome.Study.StudyActivity;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 

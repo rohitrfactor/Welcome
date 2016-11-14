@@ -23,8 +23,6 @@ public class FeedActivity extends AppCompatActivity implements FeedView, View.On
         progressBar = (ProgressBar) findViewById(R.id.progress);
         recycler = (RecyclerView) findViewById(R.id.recycler);
         fillUI();
-        showProgress();
-        hideProgress();
     }
     public void fillUI(){
         adapter = new FeedRecyclerAdapter();
@@ -50,10 +48,5 @@ public class FeedActivity extends AppCompatActivity implements FeedView, View.On
     public void hideProgress() {
         progressBar.setVisibility(View.INVISIBLE);
         recycler.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void setItems(List<String> items) {
-
     }
 }

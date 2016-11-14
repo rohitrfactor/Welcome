@@ -2,7 +2,6 @@ package com.example.garorasu.welcome.Feed;
 
 import android.util.Log;
 
-import com.example.garorasu.welcome.Post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

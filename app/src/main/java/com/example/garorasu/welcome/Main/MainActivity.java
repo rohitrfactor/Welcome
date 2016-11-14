@@ -1,10 +1,12 @@
-package com.example.garorasu.welcome;
+package com.example.garorasu.welcome.Main;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.garorasu.welcome.Login.LoginActivity;
+import com.example.garorasu.welcome.R;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 

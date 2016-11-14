@@ -1,4 +1,4 @@
-package com.example.garorasu.welcome;
+package com.example.garorasu.welcome.Login;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.garorasu.welcome.NavigationScreen;
+import com.example.garorasu.welcome.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;

@@ -8,8 +8,5 @@ import java.util.List;
 
 public interface FeedView {
     void showProgress();
-
     void hideProgress();
-
-    void setItems(List<String> items);
 }

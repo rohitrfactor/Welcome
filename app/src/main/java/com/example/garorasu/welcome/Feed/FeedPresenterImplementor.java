@@ -13,12 +13,10 @@ public class FeedPresenterImplementor implements FeedPresenter {
     }
     @Override
     public void sendDatatoAdapter(Feed f) {
-        System.out.println("send data to adapter");
         adapter.addItem(f);
     }
 
     public void requestMessages(){
-        System.out.println("In presenter : request messages");
         interactor.requestMessages();
     }
 }

@@ -57,4 +57,5 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             mTextView = (TextView) itemView.findViewById(R.id.feed_header);
         }
     }
+
 }
