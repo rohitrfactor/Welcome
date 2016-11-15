@@ -37,10 +37,6 @@ public class FeedActivity extends AppCompatActivity implements FeedView, View.On
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
