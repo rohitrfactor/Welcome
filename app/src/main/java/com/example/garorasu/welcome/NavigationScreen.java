@@ -1,22 +1,17 @@
 
 package com.example.garorasu.welcome;
 
-import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.garorasu.welcome.Quiz.QuizActivity;
-import com.example.garorasu.welcome.Study.StudyActivity;
-import com.example.garorasu.welcome.Videos.VideosActivity;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.example.garorasu.welcome.Feed.FeedFragment;
+import com.example.garorasu.welcome.Quiz.QuizFragment;
+import com.example.garorasu.welcome.Study.StudyFragment;
+import com.example.garorasu.welcome.Videos.VideosFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 
@@ -29,8 +24,12 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemStudy;
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
-    private FirebaseDatabase database;
-    private DatabaseReference myRef,upref;
+    private ResideMenuItem itemSettings;
+    private FragmentTransaction transaction;
+    private FeedFragment feedFragment;
+    private QuizFragment quizFragment;
+    private StudyFragment studyFragment;
+    private VideosFragment videosFragment;
 
 
     @Override
@@ -48,25 +47,47 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             }
         });
         mContext = this;
+
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            // Create a new Fragment to be placed in the activity layout
+            feedFragment = new FeedFragment();
+            quizFragment = new QuizFragment();
+            studyFragment = new StudyFragment();
+            videosFragment = new VideosFragment();
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            //firstFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.fragment_container,feedFragment).commit();
+        }
         setUpMenu();
     }
     @Override
     public void onClick(View view) {
 
         if (view == itemFeed){
-
+            transaction.replace(R.id.fragment_container,feedFragment).commit();
         }else if (view == itemStudy){
-            Intent study = new Intent(this,StudyActivity.class);
-            this.startActivity(study);
-            this.finish();
+            transaction.replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
-            Intent quiz = new Intent(this,QuizActivity.class);
-            this.startActivity(quiz);
-            this.finish();
+            transaction.replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
-            Intent videos = new Intent(this,VideosActivity.class);
-            this.startActivity(videos);
-            this.finish();
+            transaction.replace(R.id.fragment_container,videosFragment).commit();
+        }else if(view == itemSettings){
+            //Intent settings = new Intent(this,Settings.class);
+            //this.startActivity(settings);
         }
         resideMenu.closeMenu();
 
@@ -84,7 +105,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
 
         // create menu items;
-        String titles[] = { "Feed", "Study", "Quiz", "Videos" };
+        String titles[] = { "Feed", "Study", "Quiz", "Videos","Settings" };
         int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
 
 
@@ -103,6 +124,11 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             itemVideos = new ResideMenuItem(this, icon[3], titles[3]);
             itemVideos.setOnClickListener(this);
             resideMenu.addMenuItem(itemVideos,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+
+        itemSettings = new ResideMenuItem(this, icon[3], titles[4]);
+        itemSettings.setOnClickListener(this);
+        resideMenu.addMenuItem(itemSettings,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+
     }
 }
 
