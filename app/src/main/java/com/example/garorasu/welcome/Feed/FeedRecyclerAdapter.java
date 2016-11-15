@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.garorasu.welcome.R;
@@ -19,8 +20,9 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     private final ArrayList<Feed> mFeedList = new ArrayList<>();
     private final FeedPresenter presenter;
 
-     public FeedRecyclerAdapter(){
-         presenter = new FeedPresenterImplementor(this);
+
+     public FeedRecyclerAdapter(FeedView view){
+         presenter = new FeedPresenterImplementor(this,view);
          System.out.println("Feed recycler Adapter Constructor called");
      }
     @Override
@@ -32,7 +34,9 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Feed current = mFeedList.get(position);
-        holder.mTextView.setText(current.getHeader());
+        holder.mHeaderView.setText(current.getHeader());
+        holder.mPreviewView.setText(current.getPreviewContent());
+        holder.mDurationView.setText(current.getDuration());
     }
 
     @Override
@@ -44,18 +48,22 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         System.out.println("New Content added");
         mFeedList.add(message);
         notifyDataSetChanged();
+
     }
     public void request() {
         System.out.println("Request to new messages sent");
         presenter.requestMessages();
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
+        public TextView mHeaderView,mPreviewView,mDurationView;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(R.id.feed_header);
+
+            mHeaderView = (TextView) itemView.findViewById(R.id.feed_header);
+            mPreviewView = (TextView) itemView.findViewById(R.id.feed_preview);
+            mDurationView = (TextView) itemView.findViewById(R.id.feed_duration);
         }
     }
-
 }

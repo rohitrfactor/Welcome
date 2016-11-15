@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Welcome</string>
+    <string name="preview_content">Wrap both your RecyclerView and your loading layout (or TextView) inside a FrameLayout. Set both of then to match_parent for width and ...</string>
 </resources>

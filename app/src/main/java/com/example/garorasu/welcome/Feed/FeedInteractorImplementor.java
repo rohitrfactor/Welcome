@@ -1,5 +1,6 @@
 package com.example.garorasu.welcome.Feed;
 
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +28,7 @@ public class FeedInteractorImplementor implements FeedInteractor {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("blog");
         //upref = myRef.child("blog");
-        ValueEventListener postListener = new ValueEventListener() {
+        final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
@@ -35,6 +36,7 @@ public class FeedInteractorImplementor implements FeedInteractor {
                     Feed feed = ds.getValue(Feed.class);
                     presenter.sendDatatoAdapter(feed);
                     System.out.println("Post data fetched from firebase is : " + feed.getHeader());
+                    presenter.onSuccess();
                 }
             }
 
@@ -42,6 +44,7 @@ public class FeedInteractorImplementor implements FeedInteractor {
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                presenter.onFailure();
                 // ...
             }
         };

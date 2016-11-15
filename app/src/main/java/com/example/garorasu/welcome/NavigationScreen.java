@@ -49,8 +49,6 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         });
         mContext = this;
         setUpMenu();
-
-
     }
     @Override
     public void onClick(View view) {
@@ -70,7 +68,6 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             this.startActivity(videos);
             this.finish();
         }
-
         resideMenu.closeMenu();
 
     }
