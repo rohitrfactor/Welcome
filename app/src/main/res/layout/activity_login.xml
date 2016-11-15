@@ -4,12 +4,31 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.garorasu.welcome.Login.LoginActivity">
+    android:background="@drawable/splash"
+    tools:context="com.example.garorasu.welcome.Login.LoginActivity"
+    android:alpha="160">
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:background="#B03A443F"
+        android:alpha="160">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="#8C9FA0"
+        android:text="Signup with your google account"/>
     <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
+        android:layout_gravity="center"
+        />
+    </LinearLayout>
 </RelativeLayout>

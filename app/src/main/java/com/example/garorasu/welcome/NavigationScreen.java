@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.garorasu.welcome.Feed.Feed;
 import com.example.garorasu.welcome.Feed.FeedFragment;
 import com.example.garorasu.welcome.Quiz.QuizFragment;
 import com.example.garorasu.welcome.Study.StudyFragment;
@@ -25,18 +26,13 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
     private ResideMenuItem itemSettings;
-    private FragmentTransaction transaction;
-    private FeedFragment feedFragment;
-    private QuizFragment quizFragment;
-    private StudyFragment studyFragment;
-    private VideosFragment videosFragment;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_screen);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+      /*  Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.setTitle("Articles");
         myToolbar.setNavigationIcon(R.drawable.icon_selector);
@@ -46,6 +42,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
                 resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
             }
         });
+        */
         mContext = this;
 
         // Check that the activity is using the layout version with
@@ -60,17 +57,17 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             }
 
             // Create a new Fragment to be placed in the activity layout
-            feedFragment = new FeedFragment();
-            quizFragment = new QuizFragment();
-            studyFragment = new StudyFragment();
-            videosFragment = new VideosFragment();
+            FeedFragment feedFragment = new FeedFragment();
+
+
+
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments
             //firstFragment.setArguments(getIntent().getExtras());
 
             // Add the fragment to the 'fragment_container' FrameLayout
-            transaction = getSupportFragmentManager().beginTransaction();
-            transaction.add(R.id.fragment_container,feedFragment).commit();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container,feedFragment).commit();
         }
         setUpMenu();
     }
@@ -78,13 +75,17 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
 
         if (view == itemFeed){
-            transaction.replace(R.id.fragment_container,feedFragment).commit();
+              FeedFragment feedFragment = new FeedFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,feedFragment).commit();
         }else if (view == itemStudy){
-            transaction.replace(R.id.fragment_container,studyFragment).commit();
+              StudyFragment studyFragment = new StudyFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
-            transaction.replace(R.id.fragment_container,quizFragment).commit();
+              QuizFragment quizFragment = new QuizFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
-            transaction.replace(R.id.fragment_container,videosFragment).commit();
+              VideosFragment videosFragment = new VideosFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,videosFragment).commit();
         }else if(view == itemSettings){
             //Intent settings = new Intent(this,Settings.class);
             //this.startActivity(settings);

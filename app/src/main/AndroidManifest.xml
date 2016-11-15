@@ -21,15 +21,8 @@
             android:name=".NavigationScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Study.StudyFragment"
+            android:name=".Login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".Quiz.QuizFragment"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".Videos.VideosFragment"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Login.LoginActivity" />
     </application>
 
 </manifest>

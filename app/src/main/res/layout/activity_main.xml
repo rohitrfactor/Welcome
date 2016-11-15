@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="@drawable/splash"
     tools:context="com.example.garorasu.welcome.Main.MainActivity">
 
     <com.facebook.shimmer.ShimmerFrameLayout
@@ -22,7 +23,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="50dp"
         android:fontFamily="sans-serif-condensed"
-        android:textColor="#000"
+        android:textColor="#fff"
 
         android:id="@+id/textView" />
     </com.facebook.shimmer.ShimmerFrameLayout>
