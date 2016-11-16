@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.example.garorasu.welcome.Login.LoginActivity;
 import com.example.garorasu.welcome.R;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         new Handler().postDelayed(new Runnable(){
             @Override

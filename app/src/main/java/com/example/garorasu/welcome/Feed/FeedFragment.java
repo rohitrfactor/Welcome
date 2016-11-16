@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.example.garorasu.welcome.R;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FeedFragment extends Fragment implements FeedView, View.OnClickListener{
     private ProgressBar progressBar;
@@ -18,16 +20,16 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
     private FeedRecyclerAdapter adapter;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle("Articles");
         progressBar = (ProgressBar) view.findViewById(R.id.progress);
         recycler = (RecyclerView) view.findViewById(R.id.recycler);
         fillUI();

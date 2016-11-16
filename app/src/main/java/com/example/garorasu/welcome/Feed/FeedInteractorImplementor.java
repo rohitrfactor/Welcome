@@ -27,6 +27,7 @@ public class FeedInteractorImplementor implements FeedInteractor {
     public void requestMessages() {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("blog");
+        myRef.keepSynced(true);
         //upref = myRef.child("blog");
         final ValueEventListener postListener = new ValueEventListener() {
             @Override
