@@ -1,6 +1,7 @@
 package com.example.garorasu.welcome.Feed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.garorasu.welcome.FeedDetail.FeedDetailActivity;
 import com.example.garorasu.welcome.R;
 
 import java.text.CollationElementIterator;
@@ -73,7 +75,9 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(itemView.getContext(),mFeedList.get(getAdapterPosition()).getHeader(),Toast.LENGTH_SHORT).show();
-
+                    Intent detail = new Intent(itemView.getContext(), FeedDetailActivity.class);
+                    detail.putExtra("FEED",mFeedList.get(getAdapterPosition()));
+                    itemView.getContext().startActivity(detail);
                 }
             });
         }

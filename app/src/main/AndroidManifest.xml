@@ -23,6 +23,14 @@
         <activity
             android:name=".Login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".FeedDetail.FeedDetailActivity"
+            android:label="@string/title_activity_feed_detail"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavigationScreen" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
 package com.example.garorasu.welcome.Feed;
 
+import java.io.Serializable;
+
 /**
  * Created by garorasu on 14/11/16.
  */
 
-public class Feed {
+public class Feed implements Serializable {
     private Long blogid;
     private String duration;
     private String header;
