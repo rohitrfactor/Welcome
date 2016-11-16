@@ -11,16 +11,18 @@ public class Feed implements Serializable {
     private String duration;
     private String header;
     private String previewContent;
+    private String url;
 
     public Feed() {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Feed(Long blogid, String duration, String header, String previewContent) {
+    public Feed(Long blogid, String duration, String header, String previewContent,String url) {
         this.blogid = blogid;
         this.duration = duration;
         this.header =  header;
         this.previewContent = previewContent;
+        this.url=url;
     }
     //Getters
     public String getHeader(){return header;}
@@ -33,4 +35,5 @@ public class Feed implements Serializable {
     public String getPreviewContent(){
         return previewContent;
     }
+    public String getUrl(){return url;}
 }

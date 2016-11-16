@@ -32,6 +32,7 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
         toolbar.setTitle("Articles");
         progressBar = (ProgressBar) view.findViewById(R.id.progress);
         recycler = (RecyclerView) view.findViewById(R.id.recycler);
+        recycler.setNestedScrollingEnabled(false);
         fillUI();
         return view;
     }
