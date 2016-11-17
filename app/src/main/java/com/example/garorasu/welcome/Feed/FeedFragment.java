@@ -1,5 +1,6 @@
 package com.example.garorasu.welcome.Feed;
 
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.garorasu.welcome.R;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,8 +30,12 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setTitle("Articles");
+
+        TextView title = (TextView) view.findViewById(R.id.feed_fragment_header);
+        TextView subtitle = (TextView) view.findViewById(R.id.feed_fragment_sub_header);
+        Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),  "fonts/SpecialElite.ttf");
+        title.setTypeface(custom_font);
+        subtitle.setTypeface(custom_font);
         progressBar = (ProgressBar) view.findViewById(R.id.progress);
         recycler = (RecyclerView) view.findViewById(R.id.recycler);
         recycler.setNestedScrollingEnabled(false);

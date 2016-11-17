@@ -1,6 +1,8 @@
 
 package com.example.garorasu.welcome;
 
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -105,12 +107,11 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         super.onRestart();  // Always call the superclass method first
         //setUpMenu();
     }
-    /*
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         return resideMenu.dispatchTouchEvent(ev);
     }
-    */
+
     public void setUpMenu(){
         action.hide();
         //if(resideMenu != null){resideMenu.removeAllViews();};

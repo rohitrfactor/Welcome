@@ -34,7 +34,8 @@ public class FeedDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feed_detail);
         toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Article");
+        toolbar.setTitle("");
+        getSupportActionBar().setTitle("");
         Intent feedIntent = getIntent();
         Feed feed = (Feed) feedIntent.getSerializableExtra("FEED");
         content = (WebView) findViewById(R.id.content_text);
@@ -44,7 +45,7 @@ public class FeedDetailActivity extends AppCompatActivity {
 //        getWindow().requestFeature(Window.FEATURE_PROGRESS);
 
         content.getSettings().setJavaScriptEnabled(true);
-
+        content.getSettings().setAppCacheEnabled(true);
 
         content.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int progress) {
@@ -68,13 +69,5 @@ public class FeedDetailActivity extends AppCompatActivity {
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
         content.loadUrl(feed.getUrl());
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 }
