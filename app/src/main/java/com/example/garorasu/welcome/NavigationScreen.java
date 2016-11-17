@@ -2,6 +2,7 @@
 package com.example.garorasu.welcome;
 
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -26,6 +27,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
     private ResideMenuItem itemSettings;
+    private ActionBar action;
 
 
     @Override
@@ -43,6 +45,8 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             }
         });
         */
+        action = getSupportActionBar();
+        action.hide();
         mContext = this;
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
@@ -58,6 +62,8 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container,feedFragment).commit();
+            action.setTitle("Articles");
+
         }
         setUpMenu();
     }
@@ -65,31 +71,49 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
 
         if (view == itemFeed){
+              action.setTitle("Articles");
               FeedFragment feedFragment = new FeedFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,feedFragment).commit();
         }else if (view == itemStudy){
+              action.setTitle("Study");
               StudyFragment studyFragment = new StudyFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
+              action.setTitle("Quizes");
               QuizFragment quizFragment = new QuizFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
+              action.setTitle("Videos");
               VideosFragment videosFragment = new VideosFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,videosFragment).commit();
         }else if(view == itemSettings){
+             //action.setTitle("Settings");
             //Intent settings = new Intent(this,Settings.class);
             //this.startActivity(settings);
         }
         resideMenu.closeMenu();
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();  // Always call the superclass method first
+        //setUpMenu();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();  // Always call the superclass method first
+        //setUpMenu();
+    }
+    /*
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         return resideMenu.dispatchTouchEvent(ev);
     }
+    */
     public void setUpMenu(){
-
+        action.hide();
+        //if(resideMenu != null){resideMenu.removeAllViews();};
         resideMenu = new ResideMenu(this);
         resideMenu.setBackground(R.drawable.menu_background);
         resideMenu.attachToActivity(this);
@@ -99,8 +123,6 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         // create menu items;
         String titles[] = { "Feed", "Study", "Quiz", "Videos","Settings" };
         int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
-
-
             itemFeed = new ResideMenuItem(this, icon[0], titles[0]);
             itemFeed.setOnClickListener(this);
             resideMenu.addMenuItem(itemFeed,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT

@@ -1,9 +1,13 @@
 package com.example.garorasu.welcome.Main;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
+import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.garorasu.welcome.Login.LoginActivity;
 import com.example.garorasu.welcome.R;
@@ -11,7 +15,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ShimmerFrameLayout container;
     private static final long SPLASH_DISPLAY_LENGTH = 2000;
@@ -20,16 +24,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView title = (TextView) findViewById(R.id.text_splash);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/BungeeInline-Regular.ttf");
+        title.setTypeface(custom_font);
 
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                /* Create an Intent that will start the Navigation-Activity. */
+                // Create an Intent that will start the Navigation-Activity.
                 Intent x = new Intent(MainActivity.this,LoginActivity.class);
                 MainActivity.this.startActivity(x);
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+
     }
 
     @Override

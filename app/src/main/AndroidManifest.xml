@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Main.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,14 +19,14 @@
         </activity>
         <activity
             android:name=".NavigationScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/NavigationActivity" />
         <activity
             android:name=".Login.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/MainActivity" />
         <activity
             android:name=".FeedDetail.FeedDetailActivity"
             android:label="@string/title_activity_feed_detail"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/FeedActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NavigationScreen" />
