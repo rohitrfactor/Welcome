@@ -117,9 +117,10 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         //if(resideMenu != null){resideMenu.removeAllViews();};
         resideMenu = new ResideMenu(this);
         resideMenu.setBackground(R.drawable.menu_background);
-        resideMenu.attachToActivity(this);
-        resideMenu.setScaleValue(0.6f);
+        resideMenu.setScaleValue(0.65f);
+        resideMenu.scheduleLayoutAnimation();
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+        resideMenu.attachToActivity(this);
 
         // create menu items;
         String titles[] = { "Feed", "Study", "Quiz", "Videos","Settings" };
@@ -143,6 +144,8 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         itemSettings = new ResideMenuItem(this, icon[3], titles[4]);
         itemSettings.setOnClickListener(this);
         resideMenu.addMenuItem(itemSettings,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+        //resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
     }
+
 }
 

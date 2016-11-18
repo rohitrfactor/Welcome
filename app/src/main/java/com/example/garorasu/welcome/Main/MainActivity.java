@@ -1,12 +1,17 @@
 package com.example.garorasu.welcome.Main;
 
+import android.animation.Animator;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.TextView;
 
 import com.example.garorasu.welcome.Login.LoginActivity;
@@ -32,8 +37,21 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 // Create an Intent that will start the Navigation-Activity.
+                View view = findViewById(R.id.view_main);
+// get the center for the clipping circle
+                int centerX = (view.getLeft() + view.getRight()) / 2;
+                int centerY = (view.getTop() + view.getBottom()) / 2;
+
+                int startRadius = 0;
+// get the final radius for the clipping circle
+                int endRadius = Math.max(view.getWidth(),view.getHeight());
+
                 Intent x = new Intent(MainActivity.this,LoginActivity.class);
-                MainActivity.this.startActivity(x);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    MainActivity.this.startActivity(x, ActivityOptions.makeClipRevealAnimation(view,centerX,centerY,startRadius,endRadius).toBundle());
+                }else{
+                    MainActivity.this.startActivity(x);
+                }
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

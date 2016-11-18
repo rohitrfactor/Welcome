@@ -1,11 +1,16 @@
 package com.example.garorasu.welcome.Login;
 
+import android.animation.Animator;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.Toast;
 
 import com.example.garorasu.welcome.NavigationScreen;
@@ -79,8 +84,24 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             //updateUI(true);
             Toast.makeText(this,"Successfully logged in",Toast.LENGTH_SHORT).show();
             Intent x = new Intent(LoginActivity.this,NavigationScreen.class);
-            LoginActivity.this.startActivity(x);
-            LoginActivity.this.finish();
+            View view = findViewById(R.id.view_login);
+// get the center for the clipping circle
+            int centerX = (view.getLeft() + view.getRight()) / 2;
+            int centerY = (view.getTop() + view.getBottom()) / 2;
+
+            int startRadius = 0;
+// get the final radius for the clipping circle
+            int endRadius = Math.max(view.getWidth(),view.getHeight());
+
+// create the animator for this view (the start radius is zero)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    LoginActivity.this.startActivity(x, ActivityOptions.makeClipRevealAnimation(view,centerX,centerY,startRadius,endRadius).toBundle());
+                }else{
+                    LoginActivity.this.startActivity(x);
+                }
+                LoginActivity.this.finish();
+
+
         } else {
             // Signed out, show unauthenticated UI.
             Toast.makeText(this,"Unauthenticated",Toast.LENGTH_SHORT).show();

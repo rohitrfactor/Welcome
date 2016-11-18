@@ -32,6 +32,7 @@
     </style>
     <style name="NavigationActivity" parent="Theme.AppCompat.DayNight">
         <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryDark">@color/green</item>
         <item name="colorAccent">@color/colorAccent</item>
