@@ -40,7 +40,7 @@ public class FeedDetailActivity extends AppCompatActivity {
         Intent feedIntent = getIntent();
         Feed feed = (Feed) feedIntent.getSerializableExtra("FEED");
         content = (WebView) findViewById(R.id.content_text);
-        Typeface custom_font_1 = Typeface.createFromAsset(getAssets(),  "fonts/Exo2-ExtraBold.ttf");
+        Typeface custom_font_1 = Typeface.createFromAsset(getAssets(),  "fonts/Nunito-Regular.ttf");
         TextView header = (TextView)findViewById(R.id.title_header);
         header.setTypeface(custom_font_1);
         dialog = new ProgressDialog(FeedDetailActivity.this);
@@ -72,5 +72,21 @@ public class FeedDetailActivity extends AppCompatActivity {
         dialog.setCanceledOnTouchOutside(false);
         //dialog.show();
         content.loadUrl(feed.getUrl());
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();  // Always call the superclass method first
+        content.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();  // Always call the superclass method first
+        content.setVisibility(View.VISIBLE);
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        content.setVisibility(View.INVISIBLE);
     }
 }

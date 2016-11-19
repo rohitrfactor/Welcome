@@ -82,7 +82,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             mPreviewView = (TextView) itemView.findViewById(R.id.feed_preview);
             mDurationView = (TextView) itemView.findViewById(R.id.feed_duration);
             mContinueReading = (TextView) itemView.findViewById(R.id.continue_reading);
-            Typeface custom_font_1 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/Exo2-ExtraBold.ttf");
+            Typeface custom_font_1 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/Nunito-Regular.ttf");
             mHeaderView.setTypeface(custom_font_1);
             Typeface custom_font_2 = Typeface.createFromAsset(mPreviewView.getContext().getAssets(),  "fonts/NixieOne-Regular.ttf");
             mPreviewView.setTypeface(custom_font_2);
