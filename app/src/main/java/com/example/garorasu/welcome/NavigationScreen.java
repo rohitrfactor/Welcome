@@ -146,6 +146,9 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         resideMenu.addMenuItem(itemSettings,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
         //resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
     }
+    public void fabButton(View view){
+        resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+    }
 
 }
 

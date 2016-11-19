@@ -1,11 +1,13 @@
 package com.example.garorasu.welcome.Feed;
 
 import android.animation.Animator;
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Explode;
@@ -104,18 +106,20 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                     int startRadius = 0;
 // get the final radius for the clipping circle
                     int endRadius = Math.max(view.getWidth(),view.getHeight());
-
-// create the animator for this view (the start radius is zero)
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                        Animator anim =
-                                ViewAnimationUtils.createCircularReveal(view, centerX, centerY, startRadius, endRadius);
-                                anim.start();
-                    }
-
                     //Toast.makeText(itemView.getContext(),mFeedList.get(getAdapterPosition()).getHeader(),Toast.LENGTH_SHORT).show();
                     Intent detail = new Intent(itemView.getContext(), FeedDetailActivity.class);
                     detail.putExtra("FEED",mFeedList.get(getAdapterPosition()));
-                    itemView.getContext().startActivity(detail);
+// create the animator for this view (the start radius is zero)
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+
+                                //itemView.getContext().startActivity(detail);
+                    }else{
+
+                    }
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) itemView.getContext(),mHeaderView,"heading");
+                    itemView.getContext().startActivity(detail,options.toBundle());
+
+
                 }
             });
         }

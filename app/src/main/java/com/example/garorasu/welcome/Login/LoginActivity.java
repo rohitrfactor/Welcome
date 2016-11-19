@@ -1,6 +1,7 @@
 package com.example.garorasu.welcome.Login;
 
 import android.animation.Animator;
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
@@ -84,22 +85,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             //updateUI(true);
             Toast.makeText(this,"Successfully logged in",Toast.LENGTH_SHORT).show();
             Intent x = new Intent(LoginActivity.this,NavigationScreen.class);
-            View view = findViewById(R.id.view_login);
-// get the center for the clipping circle
-            int centerX = (view.getLeft() + view.getRight()) / 2;
-            int centerY = (view.getTop() + view.getBottom()) / 2;
-
-            int startRadius = 0;
-// get the final radius for the clipping circle
-            int endRadius = Math.max(view.getWidth(),view.getHeight());
-
-// create the animator for this view (the start radius is zero)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    LoginActivity.this.startActivity(x, ActivityOptions.makeClipRevealAnimation(view,centerX,centerY,startRadius,endRadius).toBundle());
-                }else{
-                    LoginActivity.this.startActivity(x);
-                }
-                LoginActivity.this.finish();
+            LoginActivity.this.startActivity(x);
+            LoginActivity.this.finish();
 
 
         } else {

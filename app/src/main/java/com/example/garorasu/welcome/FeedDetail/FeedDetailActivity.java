@@ -2,6 +2,7 @@ package com.example.garorasu.welcome.FeedDetail;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -39,7 +40,9 @@ public class FeedDetailActivity extends AppCompatActivity {
         Intent feedIntent = getIntent();
         Feed feed = (Feed) feedIntent.getSerializableExtra("FEED");
         content = (WebView) findViewById(R.id.content_text);
+        Typeface custom_font_1 = Typeface.createFromAsset(getAssets(),  "fonts/Exo2-ExtraBold.ttf");
         TextView header = (TextView)findViewById(R.id.title_header);
+        header.setTypeface(custom_font_1);
         dialog = new ProgressDialog(FeedDetailActivity.this);
         header.setText(feed.getHeader());
 //        getWindow().requestFeature(Window.FEATURE_PROGRESS);
