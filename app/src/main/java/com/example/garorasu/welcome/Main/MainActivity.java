@@ -21,7 +21,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private ShimmerFrameLayout container;
     private static final long SPLASH_DISPLAY_LENGTH = 2000;
@@ -41,8 +41,8 @@ public class MainActivity extends Activity {
                 View view = findViewById(R.id.view_main);
                 Intent x = new Intent(MainActivity.this,LoginActivity.class);
 
-                MainActivity.this.startActivity(x, ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) view.getContext(),view,"shimmer").toBundle());
-                //MainActivity.this.startActivity(x);
+                //MainActivity.this.startActivity(x, ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) view.getContext(),view,"shimmer").toBundle());
+                MainActivity.this.startActivity(x);
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
