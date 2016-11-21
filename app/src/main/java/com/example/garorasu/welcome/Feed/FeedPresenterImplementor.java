@@ -37,4 +37,9 @@ public class FeedPresenterImplementor implements FeedPresenter {
             view.hideProgress();
         }
     }
+    public void startDetailScreen(Feed feed){
+        if(view!=null){
+            view.startDetailScreen(feed);
+        }
+    }
 }

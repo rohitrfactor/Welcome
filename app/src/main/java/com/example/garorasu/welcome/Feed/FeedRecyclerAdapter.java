@@ -91,35 +91,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // inside your activity (if you did not enable transitions in your theme)
-                    // itemView.getContext().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-
-                    // set an exit transition
-                    //getWindow().setExitTransition(new Explode());
-                    // previously invisible view
-                    //View view = itemView.findViewById(R.id.card_view);
-                    View view = itemView.getRootView().getRootView();
-// get the center for the clipping circle
-                    int centerX = (view.getLeft() + view.getRight()) / 2;
-                    int centerY = (view.getTop() + view.getBottom()) / 2;
-
-                    int startRadius = 0;
-// get the final radius for the clipping circle
-                    int endRadius = Math.max(view.getWidth(),view.getHeight());
-                    //Toast.makeText(itemView.getContext(),mFeedList.get(getAdapterPosition()).getHeader(),Toast.LENGTH_SHORT).show();
-                    Intent detail = new Intent(itemView.getContext(), FeedDetailActivity.class);
-                    detail.putExtra("FEED",mFeedList.get(getAdapterPosition()));
-// create the animator for this view (the start radius is zero)
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-
-                                //itemView.getContext().startActivity(detail);
-                    }else{
-
-                    }
-                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) itemView.getContext(),mHeaderView,"heading");
-                    itemView.getContext().startActivity(detail,options.toBundle());
-
-
+                presenter.startDetailScreen(mFeedList.get(getAdapterPosition()));
                 }
             });
         }

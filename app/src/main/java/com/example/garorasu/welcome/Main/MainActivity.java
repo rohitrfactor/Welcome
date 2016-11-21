@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                 Intent x = new Intent(MainActivity.this,LoginActivity.class);
 
                 MainActivity.this.startActivity(x, ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) view.getContext(),view,"shimmer").toBundle());
-                MainActivity.this.startActivity(x);
+                //MainActivity.this.startActivity(x);
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

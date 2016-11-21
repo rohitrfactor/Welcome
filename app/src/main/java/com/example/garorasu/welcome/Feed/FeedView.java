@@ -9,4 +9,5 @@ import java.util.List;
 public interface FeedView {
     void showProgress();
     void hideProgress();
+    void startDetailScreen(Feed feed);
 }

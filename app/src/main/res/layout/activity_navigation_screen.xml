@@ -22,5 +22,4 @@
         android:src="@android:drawable/ic_menu_sort_by_size"
         android:background="@color/blue_grey"
          />
-
 </RelativeLayout>

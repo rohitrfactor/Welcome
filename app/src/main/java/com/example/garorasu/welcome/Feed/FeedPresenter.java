@@ -7,4 +7,5 @@ package com.example.garorasu.welcome.Feed;
 public interface FeedPresenter {
     void sendDatatoAdapter(Feed f);
     void requestMessages();
+    void startDetailScreen(Feed feed);
 }

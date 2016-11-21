@@ -1,21 +1,16 @@
 
 package com.example.garorasu.welcome;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.garorasu.welcome.Feed.Feed;
 import com.example.garorasu.welcome.Feed.FeedFragment;
 import com.example.garorasu.welcome.Quiz.QuizFragment;
 import com.example.garorasu.welcome.Study.StudyFragment;
-import com.example.garorasu.welcome.Videos.VideosFragment;
+import com.example.garorasu.welcome.Videos.VideoFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 
@@ -85,9 +80,9 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
               QuizFragment quizFragment = new QuizFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
-              action.setTitle("Videos");
-              VideosFragment videosFragment = new VideosFragment();
-              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,videosFragment).commit();
+              action.setTitle("Video");
+              VideoFragment videoFragment = new VideoFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoFragment).commit();
         }else if(view == itemSettings){
              //action.setTitle("Settings");
             //Intent settings = new Intent(this,Settings.class);
@@ -105,12 +100,9 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onRestart() {
         super.onRestart();  // Always call the superclass method first
-        //setUpMenu();
     }
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        return resideMenu.dispatchTouchEvent(ev);
-    }
+    //@Override
+    //public boolean dispatchTouchEvent(MotionEvent ev) {return resideMenu.dispatchTouchEvent(ev);}
 
     public void setUpMenu(){
         action.hide();
@@ -123,7 +115,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         resideMenu.attachToActivity(this);
 
         // create menu items;
-        String titles[] = { "Feed", "Study", "Quiz", "Videos","Settings" };
+        String titles[] = { "Feed", "Study", "Quiz", "Video","Settings" };
         int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
             itemFeed = new ResideMenuItem(this, icon[0], titles[0]);
             itemFeed.setOnClickListener(this);
