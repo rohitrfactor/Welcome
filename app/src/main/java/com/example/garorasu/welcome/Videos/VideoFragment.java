@@ -2,6 +2,7 @@ package com.example.garorasu.welcome.Videos;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -11,12 +12,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.garorasu.welcome.Feed.FeedRecyclerAdapter;
 import com.example.garorasu.welcome.Login.LoginActivity;
 import com.example.garorasu.welcome.Main.MainActivity;
 import com.example.garorasu.welcome.R;
+import com.squareup.picasso.Picasso;
 
 public class VideoFragment extends Fragment implements VideoView,View.OnClickListener  {
     private ProgressBar progressBar;
@@ -31,9 +35,18 @@ public class VideoFragment extends Fragment implements VideoView,View.OnClickLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_videos, container, false);
+
+        TextView title = (TextView) view.findViewById(R.id.video_fragment_header);
+        TextView subtitle = (TextView) view.findViewById(R.id.video_fragment_sub_header);
+        Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),  "fonts/SpecialElite.ttf");
+        title.setTypeface(custom_font);
+        subtitle.setTypeface(custom_font);
+
         progressBar = (ProgressBar) view.findViewById(R.id.progress_video);
         recycler = (RecyclerView) view.findViewById(R.id.recycler_video);
         fillUI();
+        ImageView videoHeaderImage = (ImageView) view.findViewById(R.id.video_header_image);
+        Picasso.with(getContext()).load(R.drawable.tape).into(videoHeaderImage);
         return view;
     }
     public void fillUI(){
