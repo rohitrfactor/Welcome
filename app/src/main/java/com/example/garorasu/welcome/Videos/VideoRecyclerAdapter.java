@@ -8,10 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import com.example.garorasu.welcome.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,9 @@ public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         Video current = mVideoList.get(position);
         holder.mHeaderView.setText(current.getHeader());
+        String url = "https://img.youtube.com/vi/"+current.getVid()+"/3.jpg";
+        System.out.println(url);
+        Picasso.with(holder.mVideoView.getContext()).load(url).into(holder.mVideoView);
     }
 
     @Override
@@ -56,12 +61,14 @@ public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdap
         presenter.requestVideos();
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mHeaderView,mPreviewView,mDurationView,mContinueReading;
+        public TextView mHeaderView;
         //public CardView mCardView;
+        public ImageView mVideoView;
 
         public ViewHolder(final View itemView) {
             super(itemView);
             mHeaderView = (TextView) itemView.findViewById(R.id.video_header);
+            mVideoView = (ImageView) itemView.findViewById(R.id.video_image);
             Typeface custom_font_1 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/Nunito-Regular.ttf");
             mHeaderView.setTypeface(custom_font_1);
             itemView.setOnClickListener(new View.OnClickListener() {

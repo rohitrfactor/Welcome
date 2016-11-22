@@ -13,12 +13,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.garorasu.welcome.FeedDetail.FeedDetailActivity;
 import com.example.garorasu.welcome.R;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class FeedFragment extends Fragment implements FeedView, View.OnClickListener{
     private ProgressBar progressBar;
@@ -44,6 +46,8 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
         recycler = (RecyclerView) view.findViewById(R.id.recycler_feed);
         recycler.setNestedScrollingEnabled(false);
         fillUI();
+        ImageView book = (ImageView) view.findViewById(R.id.feed_image);
+        Picasso.with(getContext()).load(R.drawable.book_table).into(book);
         return view;
     }
 
