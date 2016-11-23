@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.garorasu.welcome.Feed.FeedFragment;
+import com.example.garorasu.welcome.Product.ProductFragment;
 import com.example.garorasu.welcome.Quiz.QuizFragment;
 import com.example.garorasu.welcome.Study.StudyFragment;
 import com.example.garorasu.welcome.Videos.VideoFragment;
@@ -23,6 +24,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemStudy;
     private ResideMenuItem itemQuiz;
     private ResideMenuItem itemVideos;
+    private ResideMenuItem itemProducts;
     private ResideMenuItem itemSettings;
     private ActionBar action;
 
@@ -83,7 +85,12 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
               action.setTitle("Video");
               VideoFragment videoFragment = new VideoFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoFragment).commit();
-        }else if(view == itemSettings){
+        }else if (view == itemProducts){
+              action.setTitle("Products");
+              ProductFragment productFragment = new ProductFragment();
+              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, productFragment).commit();
+        }
+        else if(view == itemSettings){
              //action.setTitle("Settings");
             //Intent settings = new Intent(this,Settings.class);
             //this.startActivity(settings);
@@ -109,13 +116,13 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
         //if(resideMenu != null){resideMenu.removeAllViews();};
         resideMenu = new ResideMenu(this);
         resideMenu.setBackground(R.drawable.menu_background);
-        resideMenu.setScaleValue(0.65f);
+        resideMenu.setScaleValue(0.6f);
         resideMenu.scheduleLayoutAnimation();
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
         resideMenu.attachToActivity(this);
 
         // create menu items;
-        String titles[] = { "Feed", "Study", "Quiz", "Video","Settings" };
+        String titles[] = { "Feed", "Study", "Quiz", "Video","Products","Settings" };
         int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
             itemFeed = new ResideMenuItem(this, icon[0], titles[0]);
             itemFeed.setOnClickListener(this);
@@ -133,10 +140,14 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             itemVideos.setOnClickListener(this);
             resideMenu.addMenuItem(itemVideos,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
 
-        itemSettings = new ResideMenuItem(this, icon[3], titles[4]);
-        itemSettings.setOnClickListener(this);
-        resideMenu.addMenuItem(itemSettings,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
-        //resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+            itemProducts = new ResideMenuItem(this, icon[3], titles[4]);
+            itemProducts.setOnClickListener(this);
+            resideMenu.addMenuItem(itemProducts,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+
+            itemSettings = new ResideMenuItem(this, icon[3], titles[5]);
+            itemSettings.setOnClickListener(this);
+            resideMenu.addMenuItem(itemSettings,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+            //resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
     }
     public void fabButton(View view){
         resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
