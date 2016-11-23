@@ -29,6 +29,7 @@ dependencies {
     compile 'com.facebook.shimmer:shimmer:0.1.0@aar'
     compile 'com.specyci:residemenu:1.6'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.synnapps:carouselview:0.0.10'
     compile 'com.azoft.carousellayoutmanager:carousel:1.1.8'
     compile 'com.google.android.gms:play-services-auth:9.8.0'
     compile 'com.google.firebase:firebase-database:9.8.0'
