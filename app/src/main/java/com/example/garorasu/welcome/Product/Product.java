@@ -5,26 +5,26 @@ package com.example.garorasu.welcome.Product;
  */
 
 public class Product {
-    private String pid;
+    private Long pid;
     private String title;
-    private int price;
+    private String price;
     private String url;
 
     public Product(){}
-    public Product(String id,String title,int price,String url){
+    public Product(Long id,String title,String price,String url){
         this.pid = id;
         this.title = title;
         this.price = price;
         this.url = url;
     }
 
-    public String getPid() {
+    public Long getPid() {
         return pid;
     }
     public String getTitle() {
         return title;
     }
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
     public String getUrl() {
