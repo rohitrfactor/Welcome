@@ -7,9 +7,7 @@ import com.example.garorasu.welcome.Videos.Video;
  */
 
 public interface ProductView {
-    public interface VideoView {
         void showProgress();
         void hideProgress();
         void gotoProduct(Product product);
-    }
 }

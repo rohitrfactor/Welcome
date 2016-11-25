@@ -21,15 +21,12 @@ public class Product {
     public String getPid() {
         return pid;
     }
-
     public String getTitle() {
         return title;
     }
-
     public int getPrice() {
         return price;
     }
-
     public String getUrl() {
         return url;
     }

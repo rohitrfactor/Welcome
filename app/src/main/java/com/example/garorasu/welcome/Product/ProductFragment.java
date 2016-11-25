@@ -42,7 +42,7 @@ public class ProductFragment extends Fragment implements ProductView {
         //recycler.setVisibility(View.VISIBLE);
     }
     public void gotoProduct(Product product){
-        //Pass an intent to webView Activity
+        //Pass an intent to WebView Activity
     }
 
 }
