@@ -1,6 +1,8 @@
 
 package com.example.garorasu.welcome;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +10,8 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.garorasu.welcome.Feed.FeedFragment;
+import com.example.garorasu.welcome.Login.LoginActivity;
+import com.example.garorasu.welcome.Main.MainActivity;
 import com.example.garorasu.welcome.Product.ProductFragment;
 import com.example.garorasu.welcome.Quiz.QuizFragment;
 import com.example.garorasu.welcome.Study.StudyFragment;
@@ -28,7 +32,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemSettings;
     private ActionBar action;
 
-
+    private static final long FRAGMENT_DISPLAY_LENGTH = 500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +72,6 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     }
     @Override
     public void onClick(View view) {
-
         if (view == itemFeed){
               action.setTitle("Articles");
               FeedFragment feedFragment = new FeedFragment();
@@ -94,8 +97,12 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
              //action.setTitle("Settings");
             //Intent settings = new Intent(this,Settings.class);
             //this.startActivity(settings);
-        }
-        resideMenu.closeMenu();
+        }     new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                resideMenu.closeMenu();
+            }
+        }, FRAGMENT_DISPLAY_LENGTH);
 
     }
     @Override

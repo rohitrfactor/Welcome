@@ -14,11 +14,7 @@
             android:name=".Main.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".NavigationScreen"
@@ -36,8 +32,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NavigationScreen" />
         </activity>
-        <activity android:name=".Videos.QuickPlayActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Videos.QuickPlayActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Login.LoginUI">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

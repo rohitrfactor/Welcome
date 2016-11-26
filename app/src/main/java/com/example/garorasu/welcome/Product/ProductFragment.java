@@ -1,6 +1,7 @@
 package com.example.garorasu.welcome.Product;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -34,7 +35,7 @@ public class ProductFragment extends Fragment implements ProductView {
         carouselView = (CarouselView) view.findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imageListener);
-
+        adapter = new ProductRecyclerAdapter(this);
         progressBar = (ProgressBar) view.findViewById(R.id.progress_product);
         recycler = (RecyclerView) view.findViewById(R.id.recycler_product);
         fillUI();
@@ -48,8 +49,6 @@ public class ProductFragment extends Fragment implements ProductView {
     };
 
     public void fillUI(){
-        adapter = new ProductRecyclerAdapter(this);
-        adapter.request();
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler.setHasFixedSize(true);
         recycler.setItemAnimator(new DefaultItemAnimator());
