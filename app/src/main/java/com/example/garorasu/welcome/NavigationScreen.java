@@ -1,11 +1,16 @@
 
 package com.example.garorasu.welcome;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Transition;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -13,6 +18,13 @@ import com.example.garorasu.welcome.Feed.FeedFragment;
 import com.example.garorasu.welcome.Login.LoginActivity;
 import com.example.garorasu.welcome.Main.MainActivity;
 import com.example.garorasu.welcome.Product.ProductFragment;
+import com.example.garorasu.welcome.Quiz.ApiLevelHelper;
+import com.example.garorasu.welcome.Quiz.Avatar;
+import com.example.garorasu.welcome.Quiz.Category.CategorySelectionActivity;
+import com.example.garorasu.welcome.Quiz.Category.TransitionHelper;
+import com.example.garorasu.welcome.Quiz.Category.TransitionListenerAdapter;
+import com.example.garorasu.welcome.Quiz.Player;
+import com.example.garorasu.welcome.Quiz.PreferencesHelper;
 import com.example.garorasu.welcome.Quiz.QuizFragment;
 import com.example.garorasu.welcome.Study.StudyFragment;
 import com.example.garorasu.welcome.Videos.VideoFragment;
@@ -31,6 +43,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     private ResideMenuItem itemProducts;
     private ResideMenuItem itemSettings;
     private ActionBar action;
+    private Player mPlayer;
 
     private static final long FRAGMENT_DISPLAY_LENGTH = 500;
     @Override
@@ -81,9 +94,11 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
               StudyFragment studyFragment = new StudyFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
-              action.setTitle("Quizes");
-              QuizFragment quizFragment = new QuizFragment();
-              getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
+              performSignInWithTransition(view);
+              this.finish();
+              //action.setTitle("Quizes");
+              //QuizFragment quizFragment = new QuizFragment();
+              //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
               action.setTitle("Video");
               VideoFragment videoFragment = new VideoFragment();
@@ -104,6 +119,16 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             }
         }, FRAGMENT_DISPLAY_LENGTH);
 
+    }
+    private void performSignInWithTransition(View v) {
+        if(mPlayer!=null){
+            mPlayer = PreferencesHelper.getPlayer(this);
+        }else{
+            mPlayer = new Player("Name", "L",
+                    Avatar.values()[1]);
+            PreferencesHelper.writeToPreferences(this, mPlayer);
+        }
+        CategorySelectionActivity.start(this, mPlayer);
     }
     @Override
     protected void onStart() {

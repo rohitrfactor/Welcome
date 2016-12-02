@@ -49,6 +49,7 @@ public class ProductFragment extends Fragment implements ProductView {
     };
 
     public void fillUI(){
+        adapter.request();
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler.setHasFixedSize(true);
         recycler.setItemAnimator(new DefaultItemAnimator());
