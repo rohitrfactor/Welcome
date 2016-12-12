@@ -65,7 +65,6 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         System.out.println("New Content added");
         mFeedList.add(message);
         notifyDataSetChanged();
-
     }
     public void request() {
         System.out.println("Request to new messages sent");
