@@ -1,5 +1,6 @@
 package com.example.garorasu.welcome.Videos;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,30 +25,37 @@ public class VideoInteractorImplementor implements VideoInteractor {
 
     @Override
     public void requestVideos() {
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("video");
-        myRef.keepSynced(true);
-        final ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                for(DataSnapshot ds:dataSnapshot.getChildren()) {
-                    Video Video = ds.getValue(Video.class);
-                    presenter.sendDatatoAdapter(Video);
-                    System.out.println("Post data fetched from firebase is : " + Video.getHeader());
-                    presenter.onSuccess();
+        new loadDataInBackGround().execute();
+    }
+    private class loadDataInBackGround extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            database = FirebaseDatabase.getInstance();
+            myRef = database.getReference("video");
+            myRef.keepSynced(true);
+            final ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    for(DataSnapshot ds:dataSnapshot.getChildren()) {
+                        Video Video = ds.getValue(Video.class);
+                        presenter.sendDatatoAdapter(Video);
+                        System.out.println("Post data fetched from firebase is : " + Video.getHeader());
+                        presenter.onSuccess();
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                presenter.onFailure();
-                // ...
-            }
-        };
-        myRef.addListenerForSingleValueEvent(postListener);
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                    presenter.onFailure();
+                    // ...
+                }
+            };
+            myRef.addListenerForSingleValueEvent(postListener);
+            return null;
+        }
     }
 }
 

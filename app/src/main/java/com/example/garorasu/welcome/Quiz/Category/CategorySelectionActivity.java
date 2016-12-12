@@ -84,6 +84,8 @@ public class CategorySelectionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //noinspection ConstantConditions
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -106,6 +108,9 @@ public class CategorySelectionActivity extends AppCompatActivity {
             case R.id.sign_out: {
                 signOut();
                 return true;
+            }
+            case android.R.id.home: {
+                finish(); // close this activity and return to preview activity (if there is any)
             }
         }
         return super.onOptionsItemSelected(item);

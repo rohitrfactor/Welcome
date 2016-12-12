@@ -27,6 +27,7 @@ public class CategorySelectionFragment extends Fragment {
     public static CategorySelectionFragment newInstance() {
         return new CategorySelectionFragment();
     }
+    public CategorySelectionFragment(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

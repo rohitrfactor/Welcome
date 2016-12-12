@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.os.Bundle;
 import android.transition.Transition;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.example.garorasu.welcome.Feed.FeedFragment;
 import com.example.garorasu.welcome.Login.LoginActivity;
@@ -21,6 +24,7 @@ import com.example.garorasu.welcome.Product.ProductFragment;
 import com.example.garorasu.welcome.Quiz.ApiLevelHelper;
 import com.example.garorasu.welcome.Quiz.Avatar;
 import com.example.garorasu.welcome.Quiz.Category.CategorySelectionActivity;
+import com.example.garorasu.welcome.Quiz.Category.CategorySelectionFragment;
 import com.example.garorasu.welcome.Quiz.Category.TransitionHelper;
 import com.example.garorasu.welcome.Quiz.Category.TransitionListenerAdapter;
 import com.example.garorasu.welcome.Quiz.Player;
@@ -87,22 +91,28 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if (view == itemFeed){
               action.setTitle("Articles");
+              resideMenu.clearIgnoredViewList();
               FeedFragment feedFragment = new FeedFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,feedFragment).commit();
         }else if (view == itemStudy){
               action.setTitle("Study");
+              resideMenu.clearIgnoredViewList();
               StudyFragment studyFragment = new StudyFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
+              resideMenu.clearIgnoredViewList();
               performSignInWithTransition(view);
-              this.finish();
+              //this.finish();
               //action.setTitle("Quizes");
               //QuizFragment quizFragment = new QuizFragment();
               //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,quizFragment).commit();
         }else if (view == itemVideos){
+              FrameLayout ignored_view = (FrameLayout) findViewById(R.id.fragment_container);
+              resideMenu.addIgnoredView(ignored_view);
               action.setTitle("Video");
               VideoFragment videoFragment = new VideoFragment();
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoFragment).commit();
+
         }else if (view == itemProducts){
               action.setTitle("Products");
               ProductFragment productFragment = new ProductFragment();
@@ -118,16 +128,11 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
                 resideMenu.closeMenu();
             }
         }, FRAGMENT_DISPLAY_LENGTH);
-
     }
     private void performSignInWithTransition(View v) {
-        if(mPlayer!=null){
-            mPlayer = PreferencesHelper.getPlayer(this);
-        }else{
             mPlayer = new Player("Name", "L",
                     Avatar.values()[1]);
             PreferencesHelper.writeToPreferences(this, mPlayer);
-        }
         CategorySelectionActivity.start(this, mPlayer);
     }
     @Override

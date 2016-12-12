@@ -69,8 +69,8 @@ public class FeedDetailActivity extends AppCompatActivity {
             }
         });
         dialog.setMessage("Loading..Please wait.");
-        dialog.setCanceledOnTouchOutside(false);
-        //dialog.show();
+        //dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
         content.loadUrl(feed.getUrl());
     }
     @Override
