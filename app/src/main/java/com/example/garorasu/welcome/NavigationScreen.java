@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Transition;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -85,7 +88,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             action.setTitle("Articles");
 
         }
-        setUpMenu();
+        //setUpMenu();
     }
     @Override
     public void onClick(View view) {
@@ -139,6 +142,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     protected void onStart() {
         super.onStart();  // Always call the superclass method first
         //setUpMenu();
+        setBottomNavigation();
     }
 
     @Override
@@ -188,6 +192,37 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
     }
     public void fabButton(View view){
         resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+    }
+
+    public void setBottomNavigation(){
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_favorites:
+                                action.setTitle("Articles");
+                                FeedFragment feedFragment = new FeedFragment();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,feedFragment).commit();
+                                break;
+                            case R.id.action_schedules:
+
+                                //performSignInWithTransition(view);
+                                break;
+                            case R.id.action_music:
+                                FrameLayout ignored_view = (FrameLayout) findViewById(R.id.fragment_container);
+                                action.setTitle("Video");
+                                VideoFragment videoFragment = new VideoFragment();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoFragment).commit();
+
+                                break;
+                        }
+                        return false;
+                    }
+                });
     }
 
 }

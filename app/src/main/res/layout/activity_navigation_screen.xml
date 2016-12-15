@@ -8,18 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_navigation_button"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:onClick="fabButton"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:src="@android:drawable/ic_menu_sort_by_size"
-        android:background="@color/blue_grey"
-         />
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_navigation_main" />
 </RelativeLayout>
