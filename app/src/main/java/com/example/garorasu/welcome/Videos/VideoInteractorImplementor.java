@@ -24,14 +24,14 @@ public class VideoInteractorImplementor implements VideoInteractor {
     }
 
     @Override
-    public void requestVideos() {
-        new loadDataInBackGround().execute();
+    public void requestVideos(String link) {
+        new loadDataInBackGround().execute(link);
     }
-    private class loadDataInBackGround extends AsyncTask<Void, Void, Void> {
+    private class loadDataInBackGround extends AsyncTask<String, Void, Void> {
         @Override
-        protected Void doInBackground(Void... params) {
+        protected Void doInBackground(String... params) {
             database = FirebaseDatabase.getInstance();
-            myRef = database.getReference("video");
+            myRef = database.getReference("video/"+params[0]);
             myRef.keepSynced(true);
             final ValueEventListener postListener = new ValueEventListener() {
                 @Override

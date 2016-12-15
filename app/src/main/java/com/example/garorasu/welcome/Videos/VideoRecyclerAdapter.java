@@ -24,10 +24,12 @@ import java.util.ArrayList;
 public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdapter.ViewHolder> implements VideoAdapterView{
     private final ArrayList<Video> mVideoList = new ArrayList<>();
     private final VideoPresenter presenter;
+    private String link;
 
 
-    public VideoRecyclerAdapter(VideoView view){
+    public VideoRecyclerAdapter(VideoView view,String link){
         presenter = new VideoPresenterImplementor(this,view);
+        this.link = link;
         System.out.println("Video recycler Adapter Constructor called");
     }
     @Override
@@ -58,7 +60,7 @@ public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdap
     }
     public void request() {
         System.out.println("Request to new messages sent");
-        presenter.requestVideos();
+        presenter.requestVideos(link);
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mHeaderView;

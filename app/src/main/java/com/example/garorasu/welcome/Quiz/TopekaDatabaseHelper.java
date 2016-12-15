@@ -49,7 +49,7 @@ public class TopekaDatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "TopekaDatabaseHelper";
     private static final String DB_NAME = "topeka";
     private static final String DB_SUFFIX = ".db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 3;
     private static List<Category> mCategories;
     private static TopekaDatabaseHelper mInstance;
     private final Resources mResources;

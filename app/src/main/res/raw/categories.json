@@ -1,0 +1,842 @@
+[
+  {
+    "name": "Reasoning",
+    "id": "food",
+    "theme": "green",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"In each of the following questions, select the one which is different from the other three responses.",
+        "options":["120- 80","57-19","45-30","63-42"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Arrange the following words as per order in the dictionary.\nReliable\nRemarkable\nRemembrance\nReluctant\nReceptionist",
+        "options":["51432","23154","45132","51423"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which One set of letters when sequentially placed at the gaps in the given letter series shall complete the series. _b_da_ _bdd_a",
+        "options":["bdaba","dbabd","bbada","aabbb"],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"From the given alternative words, select the word which cannot be formed using the letters of the given word: SALAMANDER",
+        "options":["LAND","DAMN","SEAL","MIND"],
+        "answer":[3]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"In each of the following questions, select the related letters/word/number from the given alternatives. Doctor : Patient : :",
+        "options":["Engineer : Computer","Lawyer : Judge","Crop : Farmer","Pilot : Plane"],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"If in certain code DURADARSHAN is written as CVQBCBQTGBM, then how TELEVISION can be written in that code?",
+        "options":["SKFUJRONTI","FJKRONSPIT","SFUJROKTE","SFKFUJRJNO"],
+        "answer":[3]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"How many times is 9 preceded by either 6 or 1 and followed by either 5 or 8 in the following series ?8 9 5 1 7 6 9 8 2 1 9 8 4 3 5 9 1 3 6 9 5",
+        "options":["1","2","3","4"],
+        "answer":[2]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"Sally walks from point A 4 km towards North and turns to the left and walks 3 km. From that point she walks straight to the starting point A. What is the total distance covered by her (in km)?",
+        "options":[12,5,10,14],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"Kusuma is the wife of Ravi.Govind and Prabhu are brothers. Govirrd is the brother of Ravi. Prabhu is Kusuma’s.",
+        "options":["Cousin","Brother","Brother-in-law","Uncle"],
+        "answer":[2]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"11:121: 110:: 15 : 225 : 210::?",
+        "options":["9 : 81 : 70","19 : 361 : 342","17 : 288 : 272","16 : 255 : 239"],
+        "answer":[1]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Polity",
+    "id": "knowledge",
+    "theme": "yellow",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"Which is the highest body that approves Five Year Plans in the country?",
+        "options":["Planning Committee","Union Cabinet","Parliament","National Development Council"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which article of the Indian Constitution provides for the institution of Panchayati Raj?",
+        "options":["Article. 36","Article. 39","Article. 40","Article. 48"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Who is the highest civil servant of the Union Government?",
+        "options":["Attorney-General","Cabinet Secretary","Home Secretary","Principal Secretary to the Prime Minister"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which of the following countries have an Unwritten Constitution?",
+        "options":["USA","UK","Pakistan","India"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The Planning Commission of India is",
+        "options":["a constitutional body","an independent and autonomous body","statutory body","a non-statutory body"],
+        "answer":[3]
+      },
+      {
+        "type":"single-select",
+        "question":"Which of the following is a feature to both the Indian Federation and the American Federation?",
+        "options":[
+          "A single citizenship",
+          "Dual judiciary",
+          "Three Lists in the Constitution",
+          "A Federal Supreme Court to interpret the Constitution"
+        ],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Being the non-member, who among the following can participate in the proceedings of either house, of the Parliament without having right to vote?",
+        "options":["Chief Justice of India","President of India","Comptroller and Auditor General","Attorney General"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"A member of the Union Public Service Commission can be removed by the",
+        "options":["President","Prime Minister","Chief Justice of the Supreme Court","Chairman of the UPSC"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"What are the 'residuary powers’?",
+        "options":[
+          "Powers which are enumerated in the State List",
+          "Powers which are included in the Union List",
+          "Powers which are enumerated in the Concurrent List",
+          "Powers which are not mentioned in any of the lists"
+        ],
+        "answer":[3]
+      },
+      {
+        "type":"single-select",
+        "question":"Under the Constitution, the power to issue a writ of Habeas Corpus Is vested in",
+        "options":[
+          "High Courts alone",
+          "Supreme Court alone",
+          "Both Supreme Court and High Courts",
+          "All Courts down to the District Courts"
+        ],
+        "answer":[2]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "History",
+    "id": "history",
+    "theme": "blue",
+    "quizzes": [
+      {
+        "type":"single-select",
+        "question":"Land Revenue under Tipu—",
+        "options":[
+          "was mainly collected through revenue officers",
+          "was mainly collected by Government officials appointed by Tipu",
+          "was collected by intermediaries",
+          "was not allowed to go into the hands of Sultan"
+        ],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Who was the advocate at the famous INA Trials",
+        "options":["Bhulabhai Desai","Asaf Ali","Subhash Chandra Bose","C. Rajagopalachari"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The language used to write source materials in ancient time was",
+        "options":["Sanskrit","Pali","Brahmi","Kharosthi"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The famous revolutionary song 'Sarfaroshi ki tamanna ab hamare dil mein hai ...' was composed by",
+        "options":["Bhagat Singh","Khudiram Bose","Chandrasekhar Azad","Ramprasad Bismil"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"In which year Salt Satyagraha took place?",
+        "options":["1929","1930","1931","1932"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Out of the following remains excavated in Indus Valley, which one indicates the commercial and economic development ?",
+        "options":["The Pottery","Seals","The boats","The houses"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"What did the Hunter Commission appointed by the Viceroy probe ?",
+        "options":["Bardoli Satayagraha","Khilafat Agitation","Jallianwala Bagh tragedy","Chauri Chaura incident"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Who amongst the following also had the name ‘Devanama Piyadassi’?",
+        "options":["Mauryan King Ashoka","Mauryan King Chandragupta Maurya","Gautam Buddha","Bhagwan Mahavira"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which British Governor General introduced Postage Stamp in India ?",
+        "options":["Lord Dalhousie","Lord Auckland","Lord Canning","Lord William Bentinck"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"In Shivaji’s Council of Ministers the Prime Minister was called",
+        "options":["Peshwa","Sachiv","Mantri","Samanta"],
+        "answer":[0]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Biology",
+    "id": "geography",
+    "theme": "red",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"Which one of the following glands is responsible for secretion of sex hormones?",
+        "options":["Adrenal gland","Thyroid gland","Pituitary gland","Sebaceous gland"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The acid stored in batteries is :",
+        "options":["Sulphuric acid","Nitric acid","Hydrochloric acid","Acetic acid"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The chemical which is used in art and craft and can cause anemia and leukemia is:",
+        "options":["Benzene","Dioxine","Phthalate","Aldrin"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which of the plant products is used in leather industry?",
+        "options":["Resin","Mucilage","Latex","Tannin"],
+        "answer":[3]
+      },
+      {
+        "type":"single-select",
+        "question":"Mushroom cultivation is not useful in",
+        "options":[
+          "Biogas production",
+          "Biological control of crop diseases",
+          "Recycling of agricultural wastes",
+          "Preventing cancer"
+        ],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which chromosomal combination is responsible for maleness in man?",
+        "options":["XO","XXX","XX","XY"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Mercury poisoning in man causes the disease",
+        "options":["Blacklung","Arsenicosis","Minamata","Tai-Etai"],
+        "answer":[2]
+      },
+      {
+        "type":"single-select",
+        "question":"The main use of salt in the diet is to",
+        "options":[
+          "increase the solubility of the food particles in water",
+          "produce in small amounts the hydrochloric acid required for the digestion of food",
+          "ease the process of cooking",
+          "make the taste of the food better"
+        ],
+        "answer":[1]
+      },
+      {  "type":"four-quarter",
+        "question":"Blue-green algae arc included in the group",
+        "options":["Eubacteria","Cyanobacteria","Protozoa","Fungi"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Production of alcohol from organic compounds by microorganisms is known as",
+        "options":["Combustion","Fermentation","Anaerobic respiration","Aerobic respiration"],
+        "answer":[1]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Chemistry",
+    "id": "science",
+    "theme": "green",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"The most significant contributions towards the development of periodic table was made by",
+        "options":["Mendeleev","Avagadro","Dalton","Cavendish"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"In the periodic table with the increase in atomic number, the metallic character of an element",
+        "options":[
+          "decrease in period and increase in group",
+          "increase in period and decrease in group",
+          "increase both in period in group",
+          "decrease in period and group"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which of the following element is not in the liquid state?",
+        "options":["Hg","Li","Ga","Br"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Noble gasses were included in Mendeleev’s periodic table in the -",
+        "options":["1st group","7th group","8th group","none of these"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Pauling’s electronegativity values for elements are useful in predicting",
+        "options":["polarity of the molecules","position in the E.M.F series","coordination number","dipole moments"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"Two samples of lead oxide were separately reduced to metallic lead by heating in a current of hydrogen. The weight of lead from one oxide was half the weight of lead obtained from the other oxide. The data illustrates -",
+        "options":[
+          "law of reciprocal proportion",
+          "law of constant proportion",
+          "law of multiple proportion",
+          "law of equivalent proportion"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"When beryllium is bombarded with alpha particles extremely penetrating radiations, which cannot be deflected by electrical or magnetic fields are given out. These are:",
+        "options":["a beam of protons","alpha rays","a beam of neutrons","a beam of protons and neutrons"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Which of the following is an example of a heterogeneous substance?",
+        "options":["bottled water","table salt","pieces of copper","candle"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The electron was shown experimentally to have wave properties by",
+        "options":["de Broglie","Davisson and Germer","N. Bohr","Schrodinger"],
+        "answer":[1]
+      },
+      {
+        "type":"single-select",
+        "question":"While performing cathode ray experiments, it was observed that there was no passage of electric current under normal conditions. Which of the following can account for this observation?",
+        "options":[
+          "dust particles are present in the air",
+          "carbon dioxide is present in the air",
+          "air is a poor conductor of electricity under normal conditions",
+          "none of the above"
+        ],
+        "answer":[2]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "English",
+    "id": "tvmovies",
+    "theme": "purple",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"They have latched on to tourism as a way of boosting the local economy.",
+        "options":["promoted","discovered","Exposed","Explored"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"You ought to do your homework, oughtn’t you?",
+        "options":["should not","must not","ought","No improvement"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Some parts of the sentences have errors and some are correct. Find out which part of the sentence has an error and and In case no error your answer is d.",
+        "options":["On a holiday","I prefer reading books","Than visiting my friends","No error"],
+        "answer":[2]
+      },
+      {
+        "type":"single-select",
+        "question":"Some parts of the sentences have errors and some are correct. Find out which part of the sentence has an error and and In case no error your answer is d.",
+        "options":[
+          "I told the teacher",
+          "that the homework set for the day",
+          "was much too heavy for us to complete",
+          "No error"
+        ],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Out of the four alternatives choose the one which can be substituted for the given words/sentences A small village or a group of houses.",
+        "options":["community","settlement","hamlet","colony"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"One who plays for pleasure rather than as a profession.",
+        "options":["player","Amateur","performer","actor"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Out of the four alternatives choose the one which is spelt correctly",
+        "options":["measureable","mangeable","marriagable","manoevrable"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"This old age home was built …………………. donations.",
+        "options":["by","on","with","from"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Out of the four alternatives choose the one which is closest in meaning to the given words. rivulet",
+        "options":["Brook","Tributary","Sea","Ocean"],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Everyone has done his work, ________?",
+        "options":["Hasn't they","Have they","Haven't they","Haven't Everyone"],
+        "answer":[2]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Economics",
+    "id": "music",
+    "theme": "blue",
+    "quizzes": [
+      {
+        "type":"single-select",
+        "question":"Bilateral monopoly refers to the market situation of",
+        "options":[
+          "Two sellers, two buyers",
+          "One seller and two buyers",
+          "Two sellers and one buyer",
+          "One seller and one buyer"
+        ],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The difference between GNP and NNP equals",
+        "options":["Corporate profits","Personal taxes","Transfer payments","Depreciation"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Who is the Chairman of the' 14th Finance Commission?",
+        "options":["D. Subba Rao","Montek Singh Ahluwalia","M. Govinda Rao","Dr. YV Reddy"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"If a good has negative income elasticity of demand, it is a rated in the Constitution of",
+        "options":["Giffen goods","Normal goods","Superior goods","An inferior goods"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"Social accounting system in India is classified into",
+        "options":[
+          "Income, product and expenditure",
+          "Enterprise, households and government",
+          "Assets, liabilities and debt position",
+          "Public sector, Private sector and Joint sector"
+        ],
+        "answer":[0]
+      },
+      {
+        "type":"four-quarter",
+        "question":"The demand for labour is called",
+        "options":["Market demand","Direct demand","Derived demand","Factory demand"],
+        "answer":[2]
+      },
+      {
+        "type":"single-select",
+        "question":"Which of the following is not investment expenditure in goods and services?",
+        "options":[
+          "Expansion of the main plant of a company",
+          "Purchase of a house",
+          "Purchase of machinery",
+          "An increase in business inventories"
+        ],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"If the increase in demand is more than the increase in supply, the price will",
+        "options":["Remain the same","Increase","Decrease","Fluctuate"],
+        "answer":[1]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Consumer Protection Act was enacted in",
+        "options":["1989","1984","1986","1988"],
+        "answer":[2]
+      },
+      {
+        "type":"single-select",
+        "question":"Which of the following relations always holds true?",
+        "options":[
+          "Income = Consumption + Investment",
+          "Income = Consumption + Saving",
+          "Saving = Investment",
+          "Income = Consumption + Saving + Investment"
+        ],
+        "answer":[1]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Physics",
+    "id": "entertainment",
+    "theme": "red",
+    "quizzes": [
+      {
+        "type":"single-select",
+        "question":"The rate of change of momentum of a body is directly proportional to the force applied and takes place in the direction in which the force acts. This is",
+        "options":[
+          "Newton’s first law of motion",
+          "Newton’s second law of motion",
+          "Newton’s third law of motion",
+          "None of the above"
+        ],
+        "answer":[1]
+      },
+      {
+        "type":"single-select",
+        "question":"Atomic energy is liberated by the",
+        "options":[
+          "Disintegration of atoms",
+          "Disintegration of molecules",
+          "Integration of atoms",
+          "Integration of molecules"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"Myopia is a defect of the",
+        "options":[
+          "Heart with weak pulses",
+          "Lungs with unsteady breathing",
+          "Eye with blurring vision of distant objects",
+          "Kidneys with reduced output of urine"
+        ],
+        "answer":[2]
+      },
+      {
+        "type":"single-select",
+        "question":"Ultrasonic sound waves represent",
+        "options":[
+          "Sound waves of very high frequencies inaudible to human ear",
+          "Sound waves of very low frequency inaudible to human ear",
+          "Sound waves audible to human ear",
+          "None of the above"
+        ],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"Nose bleeding is seen among people climbing hills because",
+        "options":[
+          "Pressure outside is less than the pressure associated with blood",
+          "Lack of oxygen in the hill atmosphere",
+          "High humidity in the hill atmosphere",
+          "None of the above"
+        ],
+        "answer":[0]
+      },
+      {
+        "type":"single-select-item",
+        "question":"Pick out the work statement",
+        "options":[
+          "Heat engine is a device for changing heat energy into mechanical energy",
+          "Heat does work",
+          "Heat energy cannot be transmitted from one system to another",
+          "Heat energy can be converted into electrical energy"
+        ],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Radiant heat is transmitted in",
+        "options":["A curved path","A parabolic path","An eliptical path","A straight line"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"______is the amount of heat required to convert one gram of water into one gram of steam at 100°C.",
+        "options":["Specific heat of water","Thermal capacity of water","Latent heat of steam","Latent heat of water"],
+        "answer":[2]
+      },
+      {
+        "type":"four-quarter",
+        "question":"A good calorimeter should have",
+        "options":["Low specific heat","High specific heat","Changing specific heat","None of the above"],
+        "answer":[0]
+      },
+      {
+        "type":"single-select",
+        "question":"A trunk with loads stacked beyond certain heights runs a greater risk of skidding because",
+        "options":[
+          "Its centre of gravity is shifted towards its base",
+          "Its centre of gravity is shifted above its base",
+          "There is no change of position of its centre of gravity",
+          "Of none of the above reasons"
+        ],
+        "answer":[1]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  },
+  {
+    "name": "Mathematics",
+    "id": "sports",
+    "theme": "purple",
+    "quizzes": [
+      {
+        "type":"four-quarter",
+        "question":"If (x - 1) and (x + 3) are the factors of x + k1 x k2 then",
+        "options":["k1  = -2, k2 = -3","k1 = 2, k2 = -3","k1 = 2, k2 = 3","k1 = -2, k2 = 3"],
+        "answer":[1]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"The compound interest on a certain sum of money at a certain rate per annum for two years is Rs.2,050, and the simple interest on the same amount of money at the same rate for 3 years is Rs.3, 000. Then the sum of money is",
+        "options":["Rs.20,000","Rs.18,000","Rs.21,000","Rs.25,000"],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"A shopkeeper buys an article for Rs. 360. He wants to make a gain of 25% on it after a discount of 10%. The marked price is",
+        "options":["Rs.486","Rs.450","Rs.500","Rs.460"],
+        "answer":[2]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"In a ABC, AB = BC, B = x° and A = (2x- 20)°. Then B° is",
+        "options":["54°","30°","40°","44°"],
+        "answer":[3]
+      },
+      {
+        "type":"four-quarter",
+        "question":"Three circles of radii 3.5 cm, 4.5 cm and 5.5 cm touch each other externally. Then the perimeter of the triangle formed by joining the centres of the circles, in cm, is",
+        "options":["27","29.5","13.5","13"],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"The ratio of the number of boys and girls in a school is 2 : 3. If 25% of the boys and 30% of the girls are scholarship holders, the percentage of the school students who are not scholarship holders is",
+        "options":["72","36","54","60"],
+        "answer":[0]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"The average age. of a cricket team of 11 players is the same as it was 3_years back because 3 of the players whose current average age of 33 years were replaced by 3 youngsters. The average age of the newcomers is",
+        "options":["23 years","21 years","22 years","20 years"],
+        "answer":[2]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"If secθ + tanθ = 5,then the value of tanθ + 1 /tanθ - 1  is",
+        "options":["13/7","11/7","15/7","17/7"],
+        "answer":[3]
+      },
+      {
+
+        "type":"four-quarter",
+        "question":"Three cubes of sides 6 cm, 8 cm and 1 cm are melted to form a new cube. The surface area of the new cube is",
+        "options":["486 cm2","496 cm2","586 cm2","658 cm2"],
+        "answer":[0]
+      },
+      {
+
+        "type":"single-select",
+        "question":"Of the three numbers, the first is twice the second and is half of the third. If the average of these numbers is 56, the numbers in order are",
+        "options":[
+          "96, 24, 48",
+          "96, 48, 24",
+          "48, 96, 24",
+          "48, 24, 96"],
+        "answer":[3]
+      }
+    ],
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "solved": "false"
+  }
+]

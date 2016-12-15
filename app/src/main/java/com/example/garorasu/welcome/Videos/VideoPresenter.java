@@ -6,6 +6,6 @@ package com.example.garorasu.welcome.Videos;
 
 public interface VideoPresenter {
     void sendDatatoAdapter(Video video);
-    void requestVideos();
+    void requestVideos(String link);
     void startVideo(Video video);
 }

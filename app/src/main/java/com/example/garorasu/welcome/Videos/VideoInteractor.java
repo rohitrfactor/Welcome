@@ -5,5 +5,5 @@ package com.example.garorasu.welcome.Videos;
  */
 
 public interface VideoInteractor {
-    void requestVideos();
+    void requestVideos(String link);
 }

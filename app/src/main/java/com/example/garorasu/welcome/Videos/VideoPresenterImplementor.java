@@ -23,11 +23,11 @@ public class VideoPresenterImplementor implements VideoPresenter {
         adapter.addItem(video);
     }
 
-    public void requestVideos(){
+    public void requestVideos(String link){
         if(view!=null){
             view.showProgress();
         }
-        interactor.requestVideos();
+        interactor.requestVideos(link);
     }
     public void onSuccess(){
         if(view!=null){

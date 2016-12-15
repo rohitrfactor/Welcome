@@ -25,9 +25,9 @@ import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.squareup.picasso.Picasso;
 
 public class VideoFragment extends Fragment implements VideoView,View.OnClickListener  {
-    private ProgressBar progressBarPopular,progressBarNext;
-    private RecyclerView recyclerPopular,recyclerNext;
-    private VideoRecyclerAdapter adapterPopular,adapterNext;
+    private ProgressBar progressBarPopular,progressBarMath,progressBarEnglish,progressBarReasoning,progressBarGk;
+    private RecyclerView recyclerPopular,recyclerMath,recyclerEnglish,recyclerReasoning,recyclerGk;
+    private VideoRecyclerAdapter adapterPopular,adapterMath,adapterEnglish,adapterReasoning,adapterGk;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,37 +36,69 @@ public class VideoFragment extends Fragment implements VideoView,View.OnClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_videos, container, false);
+        View view = inflater.inflate(R.layout.content_video, container, false);
 
-        TextView title = (TextView) view.findViewById(R.id.video_fragment_header);
-        TextView subtitle = (TextView) view.findViewById(R.id.video_fragment_sub_header);
-        Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),  "fonts/SpecialElite.ttf");
-        title.setTypeface(custom_font);
-        subtitle.setTypeface(custom_font);
+        //TextView title = (TextView) view.findViewById(R.id.video_fragment_header);
+      //  TextView subtitle = (TextView) view.findViewById(R.id.video_fragment_sub_header);
+      //  Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),  "fonts/SpecialElite.ttf");
+      //  title.setTypeface(custom_font);
+      //  subtitle.setTypeface(custom_font);
 
         progressBarPopular = (ProgressBar) view.findViewById(R.id.progress_video_popular);
         recyclerPopular = (RecyclerView) view.findViewById(R.id.recycler_video_popular);
 
-        progressBarNext = (ProgressBar) view.findViewById(R.id.progress_video_next);
-        recyclerNext = (RecyclerView) view.findViewById(R.id.recycler_video_next);
+        progressBarMath = (ProgressBar) view.findViewById(R.id.progress_video_math);
+        recyclerMath = (RecyclerView) view.findViewById(R.id.recycler_video_math);
+
+        progressBarEnglish = (ProgressBar) view.findViewById(R.id.progress_video_english);
+        recyclerEnglish = (RecyclerView) view.findViewById(R.id.recycler_video_english);
+
+        progressBarReasoning = (ProgressBar) view.findViewById(R.id.progress_video_reasoning);
+        recyclerReasoning = (RecyclerView) view.findViewById(R.id.recycler_video_reasoning);
+
+        progressBarGk = (ProgressBar) view.findViewById(R.id.progress_video_gk);
+        recyclerGk = (RecyclerView) view.findViewById(R.id.recycler_video_gk);
 
         fillUI();
-        ImageView videoHeaderImage = (ImageView) view.findViewById(R.id.video_header_image);
-        Picasso.with(getContext()).load(R.drawable.tape).into(videoHeaderImage);
+        //ImageView videoHeaderImage = (ImageView) view.findViewById(R.id.video_header_image);
+        //Picasso.with(getContext()).load(R.drawable.tape).into(videoHeaderImage);
         return view;
     }
     public void fillUI(){
-        adapterPopular = new VideoRecyclerAdapter(this);
+        adapterPopular = new VideoRecyclerAdapter(this,"popular");
         adapterPopular.request();
         recyclerPopular.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         recyclerPopular.setHasFixedSize(true);
         recyclerPopular.setItemAnimator(new DefaultItemAnimator());
         recyclerPopular.setAdapter(adapterPopular);
 
-        recyclerNext.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
-        recyclerNext.setHasFixedSize(true);
-        recyclerNext.setItemAnimator(new DefaultItemAnimator());
-        recyclerNext.setAdapter(adapterPopular);
+        adapterMath = new VideoRecyclerAdapter(this,"math");
+        adapterMath.request();
+        recyclerMath.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerMath.setHasFixedSize(true);
+        recyclerMath.setItemAnimator(new DefaultItemAnimator());
+        recyclerMath.setAdapter(adapterMath);
+
+        adapterEnglish = new VideoRecyclerAdapter(this,"english");
+        adapterEnglish.request();
+        recyclerEnglish.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerEnglish.setHasFixedSize(true);
+        recyclerEnglish.setItemAnimator(new DefaultItemAnimator());
+        recyclerEnglish.setAdapter(adapterEnglish);
+
+        adapterReasoning = new VideoRecyclerAdapter(this,"reasoning");
+        adapterReasoning.request();
+        recyclerReasoning.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerReasoning.setHasFixedSize(true);
+        recyclerReasoning.setItemAnimator(new DefaultItemAnimator());
+        recyclerReasoning.setAdapter(adapterReasoning);
+
+        adapterGk = new VideoRecyclerAdapter(this,"gk");
+        adapterGk.request();
+        recyclerGk.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerGk.setHasFixedSize(true);
+        recyclerGk.setItemAnimator(new DefaultItemAnimator());
+        recyclerGk.setAdapter(adapterGk);
     }
 
     @Override
