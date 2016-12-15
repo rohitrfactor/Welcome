@@ -56,7 +56,6 @@ public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdap
         System.out.println("New Content added");
         mVideoList.add(message);
         notifyDataSetChanged();
-
     }
     public void request() {
         System.out.println("Request to new messages sent");

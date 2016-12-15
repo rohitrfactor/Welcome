@@ -5,7 +5,7 @@ package com.example.garorasu.welcome.Videos;
  */
 
 public interface VideoView {
-    void showProgress();
-    void hideProgress();
+    void showProgress(String link);
+    void hideProgress(String link);
     void startVideo(Video video);
 }

@@ -29,7 +29,7 @@ public class VideoInteractorImplementor implements VideoInteractor {
     }
     private class loadDataInBackGround extends AsyncTask<String, Void, Void> {
         @Override
-        protected Void doInBackground(String... params) {
+        protected Void doInBackground(final String... params) {
             database = FirebaseDatabase.getInstance();
             myRef = database.getReference("video/"+params[0]);
             myRef.keepSynced(true);
@@ -41,7 +41,7 @@ public class VideoInteractorImplementor implements VideoInteractor {
                         Video Video = ds.getValue(Video.class);
                         presenter.sendDatatoAdapter(Video);
                         System.out.println("Post data fetched from firebase is : " + Video.getHeader());
-                        presenter.onSuccess();
+                        presenter.onSuccess(params[0]);
                     }
                 }
 
@@ -49,7 +49,7 @@ public class VideoInteractorImplementor implements VideoInteractor {
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
                     Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                    presenter.onFailure();
+                    presenter.onFailure(params[0]);
                     // ...
                 }
             };

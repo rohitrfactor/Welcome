@@ -25,18 +25,18 @@ public class VideoPresenterImplementor implements VideoPresenter {
 
     public void requestVideos(String link){
         if(view!=null){
-            view.showProgress();
+            view.showProgress(link);
         }
         interactor.requestVideos(link);
     }
-    public void onSuccess(){
+    public void onSuccess(String link){
         if(view!=null){
-            view.hideProgress();
+            view.hideProgress(link);
         }
     }
-    public void onFailure(){
+    public void onFailure(String link){
         if(view!=null){
-            view.hideProgress();
+            view.hideProgress(link);
         }
     }
     public void startVideo(Video video){

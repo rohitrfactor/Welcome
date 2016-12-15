@@ -102,15 +102,55 @@ public class VideoFragment extends Fragment implements VideoView,View.OnClickLis
     }
 
     @Override
-    public void showProgress() {
-        progressBarPopular.setVisibility(View.VISIBLE);
-        recyclerPopular.setVisibility(View.INVISIBLE);
+    public void showProgress(String link) {
+        switch(link){
+            case "popular":{
+                progressBarPopular.setVisibility(View.VISIBLE);
+                recyclerPopular.setVisibility(View.INVISIBLE);
+                break;}
+            case "math":{
+                progressBarMath.setVisibility(View.VISIBLE);
+                recyclerMath.setVisibility(View.INVISIBLE);
+                break;}
+            case "english":{
+                progressBarEnglish.setVisibility(View.VISIBLE);
+                recyclerEnglish.setVisibility(View.INVISIBLE);
+                break;}
+            case "reasoning":{
+                progressBarReasoning.setVisibility(View.VISIBLE);
+                recyclerReasoning.setVisibility(View.INVISIBLE);
+                break;}
+            case "gk":{
+                progressBarGk.setVisibility(View.VISIBLE);
+                recyclerGk.setVisibility(View.INVISIBLE);
+                break;}
+        }
     }
 
     @Override
-    public void hideProgress() {
-        progressBarPopular.setVisibility(View.INVISIBLE);
-        recyclerPopular.setVisibility(View.VISIBLE);
+    public void hideProgress(String link) {
+        switch(link){
+            case "popular":{
+                progressBarPopular.setVisibility(View.INVISIBLE);
+                recyclerPopular.setVisibility(View.VISIBLE);
+                break;}
+            case "math":{
+                progressBarMath.setVisibility(View.INVISIBLE);
+                recyclerMath.setVisibility(View.VISIBLE);
+                break;}
+            case "english":{
+                progressBarEnglish.setVisibility(View.INVISIBLE);
+                recyclerEnglish.setVisibility(View.VISIBLE);
+                break;}
+            case "reasoning":{
+                progressBarReasoning.setVisibility(View.INVISIBLE);
+                recyclerReasoning.setVisibility(View.VISIBLE);
+                break;}
+            case "gk":{
+                progressBarGk.setVisibility(View.INVISIBLE);
+                recyclerGk.setVisibility(View.VISIBLE);
+                break;}
+        }
     }
 
     @Override
