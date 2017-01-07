@@ -27,6 +27,7 @@ public class FeedInteractorImplementor implements FeedInteractor {
     public void requestMessages() {
         new loadDataInBackground().execute();
     }
+
     private class loadDataInBackground extends AsyncTask<Void,Void,Void> {
         @Override
         protected Void doInBackground(Void... params) {

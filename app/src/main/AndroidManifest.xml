@@ -41,8 +41,16 @@
             android:screenOrientation="landscape" />
         <activity android:name=".Login.LoginUI" />
         <activity android:name=".Quiz.QuizActivity" />
-        <activity android:name=".Quiz.Category.CategorySelectionActivity"
-            android:theme="@style/Topeka.CategorySelectionActivity"></activity>
+        <activity
+            android:name=".Quiz.Category.CategorySelectionActivity"
+            android:theme="@style/Topeka.CategorySelectionActivity" />
+        <activity
+            android:name=".Product.ProductDetail"
+            android:theme="@style/FeedActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavigationScreen" />
+            </activity>
     </application>
 
 </manifest>

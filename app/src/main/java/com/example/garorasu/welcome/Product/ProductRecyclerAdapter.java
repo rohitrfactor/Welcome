@@ -37,6 +37,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
         Product current = mProductList.get(position);
         holder.mHeaderView.setText(current.getTitle());
         holder.mPriceView.setText(current.getPrice());
+        holder.mDescripionView.setText(current.getDescription());
     }
 
     @Override
@@ -55,18 +56,24 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
         presenter.requestProducts();
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mHeaderView,mPriceView;
+        public TextView mHeaderView,mPriceView,mBuy,mDescripionView;
         //public CardView mCardView;
         public ImageView mProductView;
 
         public ViewHolder(final View itemView) {
             super(itemView);
             mHeaderView = (TextView) itemView.findViewById(R.id.product_header);
+            mDescripionView = (TextView) itemView.findViewById(R.id.product_description);
             mPriceView = (TextView) itemView.findViewById(R.id.product_price);
+            mBuy = (TextView) itemView.findViewById(R.id.buy);
             Typeface custom_font_1 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/Nunito-Regular.ttf");
+            Typeface custom_font_2 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/NixieOne-Regular.ttf");
             mHeaderView.setTypeface(custom_font_1);
             mPriceView.setTypeface(custom_font_1);
             mHeaderView.setTypeface(custom_font_1);
+            mDescripionView.setTypeface(custom_font_2);
+            mBuy.setTypeface(custom_font_1);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

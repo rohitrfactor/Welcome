@@ -4,19 +4,25 @@
     <item
         android:id="@+id/action_favorites"
         android:enabled="true"
-        android:icon="@drawable/icon_home"
+        android:icon="@drawable/ic_description_black_24dp"
         android:title="Articles"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_schedules"
         android:enabled="true"
-        android:icon="@drawable/icon_category_knowledge"
+        android:icon="@drawable/ic_theaters_black_24dp"
         android:title="Quiz"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_music"
         android:enabled="true"
-        android:icon="@android:drawable/ic_media_play"
+        android:icon="@drawable/ic_live_tv_black_24dp"
         android:title="Videos"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_products"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop_two_black_24dp"
+        android:title="Products"
+        app:showAsAction="always" />
 </menu>

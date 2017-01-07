@@ -1,8 +1,11 @@
 package com.example.garorasu.welcome.Feed;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 
@@ -45,13 +49,30 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
         progressBar = (ProgressBar) view.findViewById(R.id.progress_feed);
         recycler = (RecyclerView) view.findViewById(R.id.recycler_feed);
         recycler.setNestedScrollingEnabled(false);
-        fillUI();
         ImageView book = (ImageView) view.findViewById(R.id.feed_image);
         Picasso.with(getContext()).load(R.drawable.book_table).into(book);
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view,Bundle savedInstanceState){
+        fillUI();
+    }
+
+    public boolean  isConnected(Context context){
+        ConnectivityManager cm =
+                (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+    }
+
     public void fillUI(){
+        if(!isConnected(getContext())){
+            Toast.makeText(getContext(),"Check your internet connection",Toast.LENGTH_SHORT).show();
+        }
         adapter = new FeedRecyclerAdapter(this);
         adapter.request();
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));

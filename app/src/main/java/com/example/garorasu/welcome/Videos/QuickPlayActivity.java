@@ -3,6 +3,7 @@ package com.example.garorasu.welcome.Videos;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.garorasu.welcome.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -34,7 +35,8 @@ public class QuickPlayActivity extends YouTubeBaseActivity {
                     @Override
                     public void onInitializationFailure(YouTubePlayer.Provider provider,
                                                         YouTubeInitializationResult youTubeInitializationResult) {
-
+                        Toast.makeText(getApplicationContext(),"Update your youtube app to play this video",Toast.LENGTH_SHORT);
+                     System.out.println("Error for youtube initialization : "+youTubeInitializationResult);
                     }
                 });
     }

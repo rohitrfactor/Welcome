@@ -24,7 +24,7 @@
                 android:layout_width="1000dp"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/train"/>
+                android:src="@drawable/image1"/>
         </FrameLayout>
 
     </HorizontalScrollView>

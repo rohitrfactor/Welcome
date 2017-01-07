@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,16 +64,17 @@ public class VideoRecyclerAdapter extends RecyclerView.Adapter<VideoRecyclerAdap
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mHeaderView;
-        //public CardView mCardView;
+        public CardView mCardView;
         public ImageView mVideoView;
 
         public ViewHolder(final View itemView) {
             super(itemView);
+            mCardView = (CardView) itemView.findViewById(R.id.card_view);
             mHeaderView = (TextView) itemView.findViewById(R.id.video_header);
             mVideoView = (ImageView) itemView.findViewById(R.id.video_image);
             Typeface custom_font_1 = Typeface.createFromAsset(mHeaderView.getContext().getAssets(),  "fonts/Nunito-Regular.ttf");
             mHeaderView.setTypeface(custom_font_1);
-            itemView.setOnClickListener(new View.OnClickListener() {
+            mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                 presenter.startVideo(mVideoList.get(getAdapterPosition()));

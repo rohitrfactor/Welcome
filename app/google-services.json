@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "668523215875-1pbbrmgee93acsogvvaglmfm90n6iij0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.garorasu.welcome",
+            "certificate_hash": "8428C82C193236693104D7610BCEBF72C46821FE"
+          }
+        },
+        {
           "client_id": "668523215875-jeikdk0netp3ar6lpb0p2ic3r5590p7u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

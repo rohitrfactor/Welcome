@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.garorasu.welcome.Feed.FeedRecyclerAdapter;
 import com.example.garorasu.welcome.Login.LoginActivity;
@@ -46,25 +49,37 @@ public class VideoFragment extends Fragment implements VideoView,View.OnClickLis
 
         progressBarPopular = (ProgressBar) view.findViewById(R.id.progress_video_popular);
         recyclerPopular = (RecyclerView) view.findViewById(R.id.recycler_video_popular);
-
+        recyclerPopular.setNestedScrollingEnabled(false);
         progressBarMath = (ProgressBar) view.findViewById(R.id.progress_video_math);
         recyclerMath = (RecyclerView) view.findViewById(R.id.recycler_video_math);
-
+        recyclerMath.setNestedScrollingEnabled(false);
         progressBarEnglish = (ProgressBar) view.findViewById(R.id.progress_video_english);
         recyclerEnglish = (RecyclerView) view.findViewById(R.id.recycler_video_english);
-
+        recyclerEnglish.setNestedScrollingEnabled(false);
         progressBarReasoning = (ProgressBar) view.findViewById(R.id.progress_video_reasoning);
         recyclerReasoning = (RecyclerView) view.findViewById(R.id.recycler_video_reasoning);
-
+        recyclerReasoning.setNestedScrollingEnabled(false);
         progressBarGk = (ProgressBar) view.findViewById(R.id.progress_video_gk);
         recyclerGk = (RecyclerView) view.findViewById(R.id.recycler_video_gk);
-
+        recyclerGk.setNestedScrollingEnabled(false);
         fillUI();
         //ImageView videoHeaderImage = (ImageView) view.findViewById(R.id.video_header_image);
         //Picasso.with(getContext()).load(R.drawable.tape).into(videoHeaderImage);
         return view;
     }
+    public boolean  isConnected(Context context){
+        ConnectivityManager cm =
+                (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+    }
     public void fillUI(){
+        if(!isConnected(getContext())){
+            Toast.makeText(getContext(),"Check your internet connection",Toast.LENGTH_SHORT).show();
+        }
         adapterPopular = new VideoRecyclerAdapter(this,"popular");
         adapterPopular.request();
         recyclerPopular.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));

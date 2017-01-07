@@ -104,7 +104,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
         }else if (view == itemQuiz){
               resideMenu.clearIgnoredViewList();
-              performSignInWithTransition(view);
+              performSignInWithTransition();
               //this.finish();
               //action.setTitle("Quizes");
               //QuizFragment quizFragment = new QuizFragment();
@@ -132,7 +132,7 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
             }
         }, FRAGMENT_DISPLAY_LENGTH);
     }
-    private void performSignInWithTransition(View v) {
+    private void performSignInWithTransition() {
             mPlayer = new Player("Name", "L",
                     Avatar.values()[1]);
             PreferencesHelper.writeToPreferences(this, mPlayer);
@@ -209,15 +209,17 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
                                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,feedFragment).commit();
                                 break;
                             case R.id.action_schedules:
-
-                                //performSignInWithTransition(view);
+                                performSignInWithTransition();
                                 break;
                             case R.id.action_music:
-                                FrameLayout ignored_view = (FrameLayout) findViewById(R.id.fragment_container);
                                 action.setTitle("Video");
                                 VideoFragment videoFragment = new VideoFragment();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoFragment).commit();
-
+                                break;
+                            case R.id.action_products:
+                                action.setTitle("Products");
+                                ProductFragment productFragment = new ProductFragment();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, productFragment).commit();
                                 break;
                         }
                         return false;

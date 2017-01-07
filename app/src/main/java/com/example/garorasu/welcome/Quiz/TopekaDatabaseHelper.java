@@ -47,9 +47,9 @@ import java.util.List;
 public class TopekaDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "TopekaDatabaseHelper";
-    private static final String DB_NAME = "topeka";
+    private static final String DB_NAME = "pinnacle";
     private static final String DB_SUFFIX = ".db";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 5;
     private static List<Category> mCategories;
     private static TopekaDatabaseHelper mInstance;
     private final Resources mResources;
