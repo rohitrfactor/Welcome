@@ -1,6 +1,6 @@
 <layout>
     <data>
-        <variable name="player" type="com.example.garorasu.welcome.Quiz.Player" />
+        <variable name="player" type="com.pinnacle.garorasu.welcome.Quiz.Player" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +22,7 @@
             android:elevation="@dimen/elevation_header"
             tools:ignore="UnusedAttribute">
 
-            <com.example.garorasu.welcome.Quiz.AvatarView
+            <com.pinnacle.garorasu.welcome.Quiz.AvatarView
                 android:id="@+id/avatar"
                 android:layout_width="@dimen/size_avatar_toolbar"
                 android:layout_height="@dimen/size_avatar_toolbar"

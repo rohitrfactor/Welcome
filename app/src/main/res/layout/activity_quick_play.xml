@@ -4,7 +4,7 @@
     android:id="@+id/activity_quick_play"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.garorasu.welcome.Video.QuickPlayActivity">
+    tools:context="com.pinnacle.garorasu.welcome.Video.QuickPlayActivity">
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
         android:layout_width="match_parent"

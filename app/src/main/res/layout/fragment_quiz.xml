@@ -48,7 +48,7 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <com.example.garorasu.welcome.Quiz.AvatarView
+                <com.pinnacle.garorasu.welcome.Quiz.AvatarView
                     android:id="@+id/avatar"
                     android:layout_width="@dimen/size_avatar_toolbar"
                     android:layout_height="@dimen/size_avatar_toolbar"

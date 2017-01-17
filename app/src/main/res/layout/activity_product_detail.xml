@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:elevation="20dp"
-    tools:context="com.example.garorasu.welcome.Product.ProductDetail">
+    tools:context="com.pinnacle.garorasu.welcome.Product.ProductDetail">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"

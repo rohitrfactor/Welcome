@@ -1,6 +1,6 @@
 <layout>
     <data>
-        <variable name="category" type="com.example.garorasu.welcome.Quiz.Category.Category" />
+        <variable name="category" type="com.pinnacle.garorasu.welcome.Quiz.Category.Category" />
     </data>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

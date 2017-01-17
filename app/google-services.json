@@ -57,6 +57,58 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668523215875:android:8673ea1ea4cd8436",
+        "android_client_info": {
+          "package_name": "com.pinnacle.garorasu.welcome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668523215875-76sqkrj0757bgqnohcjq71oej89a0k6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinnacle.garorasu.welcome",
+            "certificate_hash": "62D078F384055BDE87CEA442A13DA0D695E92F5B"
+          }
+        },
+        {
+          "client_id": "668523215875-s2btiujd4ek751cvosqqv9vq44do0jn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pinnacle.garorasu.welcome",
+            "certificate_hash": "8428C82C193236693104D7610BCEBF72C46821FE"
+          }
+        },
+        {
+          "client_id": "668523215875-b8b2hgpdqhu5779aj837mm0ith3nugp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBou_MS25E8rYwumqS-y125gHJdByt2dvY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668523215875-b8b2hgpdqhu5779aj837mm0ith3nugp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

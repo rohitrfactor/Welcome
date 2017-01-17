@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:elevation="20dp"
-    tools:context="com.example.garorasu.welcome.Main.MainActivity">
+    tools:context="com.pinnacle.garorasu.welcome.Main.MainActivity">
 <android.support.design.widget.AppBarLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
@@ -42,7 +42,7 @@
     android:orientation="horizontal"
     android:fitsSystemWindows="true"
     android:background="@drawable/splash_paris"
-    tools:context="com.example.garorasu.welcome.Main.MainActivity">
+    tools:context="com.pinnacle.garorasu.welcome.Main.MainActivity">
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"

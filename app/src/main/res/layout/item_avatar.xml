@@ -1,4 +1,4 @@
-<com.example.garorasu.topekaprac.SignIn.AvatarView
+<com.pinnacle.garorasu.topekaprac.SignIn.AvatarView
     android:id="@+id/avatar"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/size_fab"
