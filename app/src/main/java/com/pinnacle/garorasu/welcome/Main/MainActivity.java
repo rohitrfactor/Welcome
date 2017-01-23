@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pinnacle.garorasu.welcome.Downloads.DownloadActivity;
 import com.pinnacle.garorasu.welcome.NavigationScreen;
 import com.pinnacle.garorasu.welcome.R;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             //updateUI(true);
             Toast.makeText(this,"Successfully logged in",Toast.LENGTH_SHORT).show();
             Intent x = new Intent(this,NavigationScreen.class);
+            //Intent x = new Intent(this,DownloadActivity.class);
             this.startActivity(x);
             this.finish();
 

@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pinnacle.garorasu.welcome.Downloads.DownloadActivity;
 import com.pinnacle.garorasu.welcome.FeedDetail.FeedDetailActivity;
 import com.pinnacle.garorasu.welcome.R;
 
@@ -125,4 +126,5 @@ public class FeedFragment extends Fragment implements FeedView, View.OnClickList
         getContext().startActivity(detail);
 
     }
+
 }

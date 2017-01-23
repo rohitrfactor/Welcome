@@ -1,6 +1,7 @@
 
 package com.pinnacle.garorasu.welcome;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.pinnacle.garorasu.welcome.Downloads.DownloadActivity;
 import com.pinnacle.garorasu.welcome.Feed.FeedFragment;
 import com.pinnacle.garorasu.welcome.Product.ProductFragment;
 import com.pinnacle.garorasu.welcome.Quiz.Avatar;
@@ -210,6 +212,10 @@ public class NavigationScreen extends AppCompatActivity implements View.OnClickL
                         return false;
                     }
                 });
+    }
+    public void visitDownloadSection(View view){
+        Intent intent = new Intent(getApplicationContext(),DownloadActivity.class);
+        startActivity(intent);
     }
 
 }

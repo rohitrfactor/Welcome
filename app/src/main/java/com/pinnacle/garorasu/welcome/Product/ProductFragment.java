@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.pinnacle.garorasu.welcome.Downloads.DownloadActivity;
 import com.pinnacle.garorasu.welcome.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;

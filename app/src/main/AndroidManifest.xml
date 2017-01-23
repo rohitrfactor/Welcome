@@ -3,6 +3,8 @@
     package="com.pinnacle.garorasu.welcome">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.pinnacle.garorasu.welcome.Main.MainActivity"
+            android:name=".Main.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MainActivity">
             <intent-filter>
@@ -21,15 +23,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.pinnacle.garorasu.welcome.NavigationScreen"
+            android:name=".NavigationScreen"
             android:screenOrientation="portrait"
             android:theme="@style/NavigationActivity" />
         <activity
-            android:name="com.pinnacle.garorasu.welcome.Login.LoginActivity"
+            android:name=".Login.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MainActivity" />
         <activity
-            android:name="com.pinnacle.garorasu.welcome.FeedDetail.FeedDetailActivity"
+            android:name=".FeedDetail.FeedDetailActivity"
             android:label="@string/title_activity_feed_detail"
             android:theme="@style/FeedActivity">
             <meta-data
@@ -37,20 +39,23 @@
                 android:value="com.pinnacle.garorasu.welcome.NavigationScreen" />
         </activity>
         <activity
-            android:name="com.pinnacle.garorasu.welcome.Videos.QuickPlayActivity"
+            android:name=".Videos.QuickPlayActivity"
             android:screenOrientation="landscape" />
-        <activity android:name="com.pinnacle.garorasu.welcome.Login.LoginUI" />
-        <activity android:name="com.pinnacle.garorasu.welcome.Quiz.QuizActivity" />
+        <activity android:name=".Login.LoginUI" />
+        <activity android:name=".Quiz.QuizActivity" />
         <activity
-            android:name="com.pinnacle.garorasu.welcome.Quiz.Category.CategorySelectionActivity"
+            android:name=".Quiz.Category.CategorySelectionActivity"
             android:theme="@style/Topeka.CategorySelectionActivity" />
         <activity
-            android:name="com.pinnacle.garorasu.welcome.Product.ProductDetail"
-            android:theme="@style/FeedActivity" >
+            android:name=".Product.ProductDetail"
+            android:theme="@style/FeedActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pinnacle.garorasu.welcome.NavigationScreen" />
-            </activity>
+        </activity>
+        <activity android:name=".Downloads.DownloadActivity">
+
+        </activity>
     </application>
 
 </manifest>
